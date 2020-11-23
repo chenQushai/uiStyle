@@ -74,20 +74,18 @@
             </el-aside>
             <el-main>
                 <div class="tabs-title">
-                    <div class="option-box">
-                        <div class="nav-tab">
-                            <el-tabs v-model="ItemTabsValue" type="card"
-                                     @tab-click="tabClick"
-                                     closable @tab-remove="removeTab">
-                                <el-tab-pane
-                                        v-for="(item, index) in itemTabs"
-                                        :key="item.name"
-                                        :label="item.title"
-                                        :name="item.name"
-                                >
-                                </el-tab-pane>
-                            </el-tabs>
-                        </div>
+                    <div class="home-tabs">
+                        <el-tabs v-model="ItemTabsValue" type="card"
+                                 @tab-click="tabClick"
+                                 closable @tab-remove="removeTab">
+                            <el-tab-pane
+                                    v-for="(item, index) in itemTabs"
+                                    :key="item.name"
+                                    :label="item.title"
+                                    :name="item.name"
+                            >
+                            </el-tab-pane>
+                        </el-tabs>
                     </div>
 
                 </div>
@@ -96,7 +94,7 @@
                     <router-view ref="childView" style="min-width: 1280px;"></router-view>
                 </div>
 
-                <el-card class="box-card side-nav pointer" >
+                <el-card class="box-card side-nav pointer">
                     <div :key="index" v-for="(n,index) in $store.state.index.navList"
                          @click="jumpToNav(n.el)"
                          class="item">
@@ -116,14 +114,14 @@
             return {
                 headerBg: require('../assets/img/header.png'),
                 createName: '',
-                defaultActive: '/home/table',
-                ItemTabsValue: '/home/table',
+                defaultActive: '/home/tabs',
+                ItemTabsValue: '/home/tabs',
                 activeMenuName: '',//当前点击的菜单名
                 itemTabs: [
                     {
-                        title: '通用css',
-                        name: '/home/generalCss',
-                        path: '/home/generalCss'
+                        title: 'tabs',
+                        name: '/home/tabs',
+                        path: '/home/tabs'
                     }
                 ],//tabs栏目
                 menuData: [
@@ -145,11 +143,17 @@
                         url: '/home/table',
                         children: []
                     },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: 'Tabs标签',
+                        url: '/home/tabs',
+                        children: []
+                    },
                 ],
             }
         },
         created() {
-            this.$router.replace('/home/table');
+            this.$router.replace('/home/tabs');
 
         },
         mounted() {
@@ -300,26 +304,6 @@
         }
     }
 
-    .tabs-title {
-        height: 40px;
-        /deep/ .el-tabs__header {
-            margin: 0;
-        }
-        .option-box {
-            float: left;
-            width: 100%;
-            /deep/ .el-tabs--card > .el-tabs__header .el-tabs__nav {
-                border-top: none;
-            }
-            /deep/ .el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
-                border-bottom: none;
-                background-color: #DEECFF;
-            }
-            /deep/ .el-tabs__item.is-active {
-                color: black;
-            }
-        }
-    }
 
     .aside {
         box-shadow: 1px 0px 3px rgba(25, 41, 63, 0.1);
@@ -333,7 +317,6 @@
         overflow: auto;
         background-color: rgb(241, 245, 253);
     }
-
 
     .side-nav {
         position: fixed;

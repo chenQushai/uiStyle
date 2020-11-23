@@ -280,6 +280,24 @@
   bottom: -1px !important;
 }
 
+
+.table-height-current {
+  //表格选中高亮行颜色
+  .el-table--striped .el-table__body tr.el-table__row--striped.current-row td {
+    background-color: #409EFF;
+    color: white;
+    pointer-events: none;
+  }
+
+  .el-table__body tr.current-row > td {
+    background-color: #409EFF;
+    color: white;
+    pointer-events: none;
+  }
+}
+
+
+
 //修改左菜单自定义icon样式
 .menu-iconfont {
   vertical-align: middle;
@@ -290,7 +308,8 @@
   font-size: 18px;
 }
 
-//修改tabs 样式
+
+//修改主页tabs 样式
 .home-tabs {
   .el-tabs--card > .el-tabs__header {
     border-bottom: none !important;
@@ -312,11 +331,54 @@
     border-top: none !important;
     border-bottom: none !important;
   }
+}
+
+
+//梯形tabs 样式
+.trapezoid-tabs {
+  .el-tabs--card > .el-tabs__header {
+    border-bottom: 1px solid #E4E7ED !important;
+  }
+  .el-tabs--card > .el-tabs__header .el-tabs__item {
+    line-height: 48px;
+    color: rgb(25, 41, 63);
+    border: none;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      border: 1px solid #dcdfe6;
+      background-color: rgb(243, 243, 243);
+      transform: -webkit-perspective(0.5em), rotateX(2deg);
+      transform: perspective(0.5em) rotateX(2deg);
+      transform-origin: bottom;
+    }
+  }
+
+  .el-tabs__header {
+    margin: 0;
+  }
+
+
+
+  .el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
+    &:after {
+      background-color: rgb(64, 158, 255);
+    }
+    color: white;
+  }
+
+  .el-tabs--card > .el-tabs__header .el-tabs__nav {
+    border: none;
+  }
 
 }
 
 //修改左菜单样式
-
 .el-menu-item.is-active {
   background-color: rgb(69, 155, 255) !important;
   color: #ffffff !important;

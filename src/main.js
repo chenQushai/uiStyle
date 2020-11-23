@@ -3,6 +3,7 @@ import router from './router'
 import store from './store'
 import App from './App.vue'
 
+import scroll from 'vue-seamless-scroll'
 import {vuePlugin} from 'castle-haozijunqaq-utils'
 import VueCodemirror from 'vue-codemirror'
 import ElementUI from 'element-ui';
@@ -22,6 +23,7 @@ for (let key  in directives) {
 }
 Vue.use(vuePlugin)
 Vue.use(ElementUI)
+Vue.use(scroll)
 Vue.use(VueCodemirror,{
     options: {
         tabSize: 4,

@@ -16,6 +16,7 @@
     "vue-codemirror": "^4.0.6",
     "vue-multipane": "^0.9.5",
     "vue-router": "^3.0.1",
+    "vue-seamless-scroll": "^1.1.21",
     "vuedraggable": "^2.23.2",
     "vuex": "^3.0.1"
   },

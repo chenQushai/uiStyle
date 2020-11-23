@@ -37,7 +37,12 @@ let routes = [
             {
                 path: 'table',
                 name: 'table',
-                component: () => import('../views/table/table')
+                component: () => import('../views/table/tableComponent')
+            },
+            {
+                path: 'tabs',
+                name: 'tabs',
+                component: () => import('../views/tabs/tabsComponent')
             }
         ]
     },
