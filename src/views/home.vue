@@ -114,14 +114,14 @@
             return {
                 headerBg: require('../assets/img/header.png'),
                 createName: '',
-                defaultActive: '/home/tabs',
-                ItemTabsValue: '/home/tabs',
+                defaultActive: '/home/generalCss',
+                ItemTabsValue: '/home/generalCss',
                 activeMenuName: '',//当前点击的菜单名
                 itemTabs: [
                     {
                         title: 'tabs',
-                        name: '/home/tabs',
-                        path: '/home/tabs'
+                        name: '/home/generalCss',
+                        path: '/home/generalCss'
                     }
                 ],//tabs栏目
                 menuData: [
@@ -153,7 +153,7 @@
             }
         },
         created() {
-            this.$router.replace('/home/tabs');
+            this.$router.replace('/home/generalCss');
 
         },
         mounted() {

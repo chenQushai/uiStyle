@@ -5,7 +5,7 @@
                 <div ref="basisTable" class="header-nav-divider">基础表格样式</div>
 
                 <p class="module-introduced">此处只演示基础表格样式,更多表格详见<a
-                        href="https://element.eleme.cn/tableComponent.vue#/zh-CN/component/table" target="_blank">element-ui表格组件</a>
+                        href="https://element.eleme.cn/#/zh-CN/component/table" target="_blank">element-ui表格组件</a>
                 </p>
 
                 <el-table
