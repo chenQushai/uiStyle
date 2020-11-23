@@ -169,6 +169,124 @@
 
                 <codemirror class="margin-top20" v-model="operatorRow"/>
 
+                <p ref="editTable" class="module-introduced">编辑表格，当需要编辑表格时，在每个列中插入template以及编辑框，编辑框可以是任意表单</p>
+
+                <el-table
+                        :data="editTable"
+                        :height="288"
+                        stripe
+                        border
+                        highlight-current-row
+                        :header-row-style="{background:'#F2F7FF'}"
+                        :header-cell-style="{background:'transparent'}"
+                        style="width: 100%">
+                    <el-table-column
+                            label="编码"
+                            align="center"
+                            prop="code"
+                            min-width="120">
+                        <template slot-scope="scope">
+                            <span v-if="!scope.row.edit">{{scope.row.code}}</span>
+                            <el-input v-if="scope.row.edit" v-model="scope.row.code" size="mini"></el-input>
+                        </template>
+                    </el-table-column>
+
+                    <el-table-column
+                            label="名称"
+                            align="left"
+                            prop="name"
+                            min-width="150">
+                        <template slot-scope="scope">
+                            <span v-if="!scope.row.edit">{{scope.row.name}}</span>
+                            <el-input v-if="scope.row.edit" v-model="scope.row.name" size="mini"></el-input>
+                        </template>
+                    </el-table-column>
+
+                    <el-table-column
+                            label="拼音码"
+                            align="left"
+                            prop="pym"
+                            width="100">
+                        <template slot-scope="scope">
+                            <span v-if="!scope.row.edit">{{scope.row.pym}}</span>
+                            <el-input v-if="scope.row.edit" v-model="scope.row.pym" size="mini"></el-input>
+                        </template>
+                    </el-table-column>
+
+                    <el-table-column
+                            label="可用性"
+                            align="center"
+                            prop="canUse"
+                            width="70">
+                        <template slot-scope="scope">
+                            <el-checkbox v-model="scope.row.canUse"></el-checkbox>
+                        </template>
+                    </el-table-column>
+
+                    <el-table-column
+                            label="备注"
+                            align="left"
+                            prop="bz"
+                            min-width="220">
+                        <template slot-scope="scope">
+                            <span v-if="!scope.row.edit">{{scope.row.bz}}</span>
+                            <el-input v-if="scope.row.edit" v-model="scope.row.bz"></el-input>
+                        </template>
+                    </el-table-column>
+
+                    <el-table-column
+                            label="操作"
+                            align="left"
+                            prop="bz"
+                            width="220">
+                        <template slot-scope="scope">
+                            <span class="blue-main pointer" v-if="!scope.row.edit" @click="editRow(scope.row)">编辑</span>
+                            <span class="green-main pointer" v-if="scope.row.edit"
+                                  @click="confirmRow(scope.row)">保存</span>
+                            <span class="red-main margin-left10 pointer" @click="delRow(scope.$index)">删除</span>
+                        </template>
+                    </el-table-column>
+                </el-table>
+
+                <codemirror class="margin-top20" v-model="editTableRow"/>
+
+
+                <p ref="editCell" class="module-introduced">
+                    编辑单元格，需要拉取https://github.com/chenQushai/vue-component.git编辑cell组件,edit-cell组件暂只支
+                    持input框和date-pick框，v-model绑定值，type值类型，text:input框，date: date-pick</p>
+
+                <el-table
+                        :data="sysData"
+                        :height="288"
+                        stripe
+                        border
+                        highlight-current-row
+                        :header-row-style="{background:'#F2F7FF'}"
+                        :header-cell-style="{background:'transparent'}"
+                        style="width: 100%">
+                    <el-table-column
+                            label="编码"
+                            align="center"
+                            prop="code"
+                            width="120">
+                        <template slot-scope="scope">
+                            <editable-cell v-model="scope.row.code" :type="'text'"></editable-cell>
+                        </template>
+                    </el-table-column>
+                    <el-table-column
+                            label="系统名称"
+                            align="center"
+                            prop="name">
+                        <template slot-scope="scope">
+                            <editable-cell v-model="scope.row.name" :type="'text'"></editable-cell>
+                        </template>
+                    </el-table-column>
+                </el-table>
+
+
+                <codemirror class="margin-top20" v-model="editTableCell"/>
+
+
                 <div ref="pagination" class="header-nav-divider">分页器</div>
 
                 <p class="module-introduced">多数情况下，数据量过多时，我们会进行分页处理。更多详情
@@ -233,10 +351,30 @@
                         code: '566566',
                         name: '医疗保健中心'
                     }],
+                editTable: [
+                    {
+                        code: '201251452',
+                        name: '这是一条很长的名称',
+                        pym: 'Xds',
+                        canUse: true,
+                        bz: '备注',
+                        edit: false
+                    },
+                    {
+                        code: '2012',
+                        name: '这是一条很长的名称',
+                        pym: 'ss',
+                        canUse: true,
+                        bz: '备注',
+                        edit: false
+                    }
+                ],
                 basicTable: tableCode.basicTable,
                 rowStyle: tableCode.rowStyle,
                 selectCurrent: tableCode.selectCurrent,
                 operatorRow: tableCode.operatorRow,
+                editTableRow: tableCode.editTableRow,
+                editTableCell: tableCode.editTableCell,
                 pagination: tableCode.pagination,
             }
         },
@@ -259,6 +397,14 @@
                     title: '操作列'
                 },
                 {
+                    el: 'editTable',
+                    title: '编辑表格'
+                },
+                {
+                    el: 'editCell',
+                    title: '编辑单元格'
+                },
+                {
                     el: 'pagination',
                     title: '分页器'
                 }
@@ -274,6 +420,17 @@
                     }
                 }
             },
+
+            editRow(row) {
+                row.edit = true;
+            },
+            confirmRow(row) {
+                row.edit = false;
+            },
+            delRow(index) {
+                this.editTable.splice(index, 1)
+            },
+
             handleSizeChange(val) {
                 console.log(`每页 ${val} 条`);
             },
