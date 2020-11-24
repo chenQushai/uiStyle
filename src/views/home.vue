@@ -119,7 +119,7 @@
                 activeMenuName: '',//当前点击的菜单名
                 itemTabs: [
                     {
-                        title: 'tabs',
+                        title: '通用CSS',
                         name: '/home/generalCss',
                         path: '/home/generalCss'
                     }
@@ -133,7 +133,7 @@
                     },
                     {
                         icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
-                        menuName: '常用表单',
+                        menuName: '常用表单布局',
                         url: '/home/commonUseMen',
                         children: []
                     },
@@ -149,11 +149,29 @@
                         url: '/home/tabs',
                         children: []
                     },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: '树形',
+                        url: '/home/tree',
+                        children: []
+                    },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: 'dialog弹窗',
+                        url: '/home/dialog',
+                        children: []
+                    },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: '表单常用控件',
+                        url: '/home/formAll',
+                        children: []
+                    }
                 ],
             }
         },
         created() {
-            this.$router.replace('/home/generalCss');
+            this.$router.replace('/home/generalCss')
 
         },
         mounted() {

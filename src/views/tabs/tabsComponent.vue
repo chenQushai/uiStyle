@@ -42,6 +42,19 @@
 
                 <codemirror class="margin-top20" v-model="trapezoidTabs"/>
 
+                <p ref="borderCard" class="module-introduced">用于栏目切换border-card,外层div加上类,一般这种选项卡较为固定，可设置外层div的宽度</p>
+
+                <div style="width: 196px">
+                    <div class="border-card">
+                        <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
+                            <el-tab-pane label="最近使用" name="0">最近使用</el-tab-pane>
+                            <el-tab-pane label="最新项目" name="1">最新项目</el-tab-pane>
+                        </el-tabs>
+                    </div>
+                </div>
+
+                <codemirror class="margin-top20" v-model="borderTabs"/>
+
 
 
             </div>
@@ -57,6 +70,7 @@
         data() {
             return {
                 ItemTabsValue: '1',
+                activeName: '1',
                 itemTabs: [
                     {
                         label: '用户管理',
@@ -72,7 +86,8 @@
                     }
                 ],
                 basicTabs: basicTabs.basicTabs,
-                trapezoidTabs: basicTabs.trapezoidTabs
+                trapezoidTabs: basicTabs.trapezoidTabs,
+                borderTabs: basicTabs.borderTabs
             }
         },
         mounted() {
@@ -84,11 +99,18 @@
                 {
                     el: 'trapezoid',
                     title: '梯形tabs'
+                },
+                {
+                    el: 'borderCard',
+                    title: '边框tabs'
                 }
 
             ]);
         },
         methods: {
+            handleClick(tab, event) {
+                console.log(tab.name, event);
+            },
             tabClick(tab) {
                 this.ItemTabsValue = tab.name;
             },

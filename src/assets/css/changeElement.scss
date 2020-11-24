@@ -74,6 +74,7 @@
     width: 56%;
   }
 }
+
 //表单label必填红色字体
 .el-world-color-red {
   .el-form-item__label {
@@ -190,7 +191,6 @@
   }
 }
 
-
 .el-world-6.el-col-18 {
   .el-form-item {
     width: 100%;
@@ -215,12 +215,10 @@
   }
 }
 
-
 //时间选择框
 .el-date-editor.el-input {
   width: 100%;
 }
-
 
 //修改mini输入框样式
 .el-input--mini .el-input__inner {
@@ -232,8 +230,6 @@
 .el-button--mini {
   padding: 9px 15px !important;
 }
-
-
 
 //时间选择“至”
 .el-date-editor .el-range-separator {
@@ -249,8 +245,6 @@
     width: 100%;
   }
 }
-
-
 
 .el-table td, .el-table th {
   padding: 7px 0 !important;
@@ -280,7 +274,6 @@
   bottom: -1px !important;
 }
 
-
 .table-height-current {
   //表格选中高亮行颜色
   .el-table--striped .el-table__body tr.el-table__row--striped.current-row td {
@@ -296,8 +289,6 @@
   }
 }
 
-
-
 //修改左菜单自定义icon样式
 .menu-iconfont {
   vertical-align: middle;
@@ -307,7 +298,6 @@
   text-align: center;
   font-size: 18px;
 }
-
 
 //修改主页tabs 样式
 .home-tabs {
@@ -332,7 +322,6 @@
     border-bottom: none !important;
   }
 }
-
 
 //梯形tabs 样式
 .trapezoid-tabs {
@@ -363,8 +352,6 @@
     margin: 0;
   }
 
-
-
   .el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
     &:after {
       background-color: rgb(64, 158, 255);
@@ -378,6 +365,33 @@
 
 }
 
+//border-card
+.border-card {
+  border-radius: 5px;
+  border: 1px solid #e4e7ed;
+  /deep/ .el-tabs__content {
+    display: none;
+  }
+  .el-tabs--border-card {
+    box-shadow: none;
+    border: none;
+  }
+  /deep/ .el-tabs__item {
+    height: 32px;
+    line-height: 32px;
+  }
+
+  /deep/ .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+    color: #fFF;
+    background-color: #409EFF;
+    border-right-color: #409EFF;
+    border-left-color: #409EFF;
+  }
+  /deep/ .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active:hover {
+    color: #FFF;
+  }
+}
+
 //修改左菜单样式
 .el-menu-item.is-active {
   background-color: rgb(69, 155, 255) !important;
@@ -387,8 +401,16 @@
 //修改dialog样式
 .el-dialog__header {
   border-bottom: 1px solid rgb(230, 230, 230);
-  padding: 9px 20px 7px;
-  background-color: rgb(242, 247, 255);
+  padding: 14px 20px 12px;
+  background-color: #409EFF;
+  .el-dialog__title {
+    color: white;
+  }
+  .el-dialog__headerbtn .el-dialog__close {
+    border-radius: 16px;
+    background-color: white;
+    color: #409EFF;
+  }
 }
 
 .el-dialog {
@@ -425,4 +447,23 @@
   border-color: #879bba;
 }
 
-
+//修改选中树样式
+.select-tree-bg-blue {
+  .el-tree {
+    background-color: transparent;
+    /deep/ .el-tree-node__expand-icon.expanded {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    /deep/ .el-tree-node__expand-icon {
+      font-size: 15px;
+    }
+    /deep/ .is-disabled {
+      display: none;
+    }
+    /deep/ .el-tree-node.is-current > .el-tree-node__content {
+      background-color: #2F8DFB !important;
+      color: white;
+    }
+  }
+}

@@ -46,6 +46,24 @@ export default {
     `,
 
     rowStyle: `
+    <div class="barge-content">
+        <div class="barge-item">
+             <div class="barge-rect orange-bg"></div>
+             <div class="barge-des">精神毒麻</div>
+        </div>
+        <div class="barge-item">
+             <div class="barge-rect gray-bg"></div>
+             <div class="barge-des">长期</div>
+        </div>
+        <div class="barge-item">
+             <div class="barge-rect green-bg"></div>
+             <div class="barge-des">临时</div>
+        </div>
+        <div class="barge-item">
+            <div class="barge-rect blue-bg"></div>
+            <div class="barge-des">出院带药</div>
+        </div>
+    </div>    
     <el-table
        :data="tableData"
        :height="268"

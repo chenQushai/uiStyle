@@ -66,6 +66,17 @@ export default {
              </el-tab-pane>
          </el-tabs>
     </div>
+    `,
+
+    borderTabs: `
+     <div style="width: 196px">
+          <div class="border-card">
+              <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
+                  <el-tab-pane label="最近使用" name="0">最近使用</el-tab-pane>
+                  <el-tab-pane label="最新项目" name="1">最新项目</el-tab-pane>
+              </el-tabs>
+          </div>
+     </div>
     `
 
 

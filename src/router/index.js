@@ -43,6 +43,21 @@ let routes = [
                 path: 'tabs',
                 name: 'tabs',
                 component: () => import('../views/tabs/tabsComponent')
+            },
+            {
+                path: 'tree',
+                name: 'tree',
+                component: () => import('../views/tree/tree')
+            },
+            {
+                path: 'dialog',
+                name: 'dialog',
+                component: () => import('../views/Dialog弹窗/dialogComponent')
+            },
+            {
+                path: 'formAll',
+                name: 'formAll',
+                component: () => import('../views/formComponent/formAll')
             }
         ]
     },

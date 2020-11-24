@@ -56,7 +56,26 @@
 
 
                 <p ref="rowStyle" class="module-introduced">当表格行类需要根据条件修改样式时,添加row-style属性，回调方法返回样式对象</p>
+                <p class="module-introduced">常常会在表格中出现颜色区分不同的例子，我们会用图列展示这是只需在表格上方添加div类barge-content,背景颜色根据背景颜色类</p>
 
+                <div class="barge-content">
+                    <div class="barge-item">
+                        <div class="barge-rect orange-bg"></div>
+                        <div class="barge-des">精神毒麻</div>
+                    </div>
+                    <div class="barge-item">
+                        <div class="barge-rect gray-bg"></div>
+                        <div class="barge-des">长期</div>
+                    </div>
+                    <div class="barge-item">
+                        <div class="barge-rect green-bg"></div>
+                        <div class="barge-des">临时</div>
+                    </div>
+                    <div class="barge-item">
+                        <div class="barge-rect blue-bg"></div>
+                        <div class="barge-des">出院带药</div>
+                    </div>
+                </div>
                 <el-table
                         :data="tableData"
                         :height="268"
@@ -307,6 +326,8 @@
                 </div>
 
                 <codemirror class="margin-top20" v-model="pagination"/>
+
+
 
 
             </div>
