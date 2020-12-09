@@ -48,6 +48,7 @@
                 <el-input v-model="input" size="mini" placeholder="请输入内容"></el-input>
 
                 <codemirror class="margin-top20" v-model="inputCode"/>
+
             </div>
         </div>
     </div>
@@ -86,6 +87,11 @@
                 }
 
             ]);
+        },
+        methods: {
+            show(e) {
+                console.log(e)
+            }
         }
     }
 </script>
