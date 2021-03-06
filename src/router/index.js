@@ -14,7 +14,7 @@ let routes = [
     {
         path: '/',
         fullPath: '/',
-        redirect: '/home'
+        redirect: '/home/fishBone'
     },
 
 
@@ -58,10 +58,14 @@ let routes = [
                 path: 'formAll',
                 name: 'formAll',
                 component: () => import('../views/formComponent/formAll')
-            }
-        ]
+            },
+        ],
     },
-
+    {
+        path: '/fishBone',
+        name: 'fishBone',
+        component: () => import('../views/fishBone/fishBonePage')
+    }
 ];
 
 const router = new vueRouter({
