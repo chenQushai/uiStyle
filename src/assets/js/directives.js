@@ -44,7 +44,7 @@ const pop = (el) => {
         let scrollTop = 0;
         let parentNode = '';
         //滚动事件
-        const scrollFun =  () =>{
+        const scrollFun = () => {
             node.style.top = `${Math.ceil(el.getBoundingClientRect().y)}px`;
         };
 
@@ -57,16 +57,16 @@ const pop = (el) => {
             else {
                 scrollTop = parent.scrollTop;
                 parentNode = parent;
-                parentNode.addEventListener('scroll',scrollFun)
+                parentNode.addEventListener('scroll', scrollFun)
             }
         };
         getParentScrollTop(el);
         setTimeout(() => {
             if (parentNode) {
-                parentNode.removeEventListener('scroll',scrollFun)
+                parentNode.removeEventListener('scroll', scrollFun)
             }
             parent.removeChild(node)
-        },1500)
+        }, 1500)
     });
 };
 

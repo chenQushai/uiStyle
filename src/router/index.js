@@ -14,7 +14,7 @@ let routes = [
     {
         path: '/',
         fullPath: '/',
-        redirect: '/home/fishBone'
+        redirect: '/home'
     },
 
 
@@ -65,6 +65,11 @@ let routes = [
         path: '/fishBone',
         name: 'fishBone',
         component: () => import('../views/fishBone/fishBonePage')
+    },
+    {
+        path: '/test',
+        name: 'test',
+        component: () => import('../views/test/Home')
     }
 ];
 

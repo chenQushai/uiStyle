@@ -19,7 +19,7 @@ import './components/registerComponent'
 import directives from './assets/js/directives'
 //注册指令
 for (let key  in directives) {
-  Vue.directive(key,directives[key])
+      Vue.directive(key,directives[key])
 }
 Vue.use(vuePlugin)
 Vue.use(ElementUI)

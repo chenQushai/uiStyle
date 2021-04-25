@@ -171,7 +171,7 @@
             }
         },
         created() {
-            this.$router.replace('/home/fishBone')
+            // this.$router.replace('/fishBone')
 
         },
         mounted() {
