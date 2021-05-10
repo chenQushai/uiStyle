@@ -316,17 +316,26 @@ el-world-8.font-align-both {
 
 .table-height-current {
   //表格选中高亮行颜色
-  .el-table--striped .el-table__body tr.el-table__row--striped.current-row td {
-    background-color: #409EFF;
+  .el-table__body tr.current-row > td {
+    background-color: #409EFF !important;
     color: white;
-    pointer-events: none;
+    //pointer-events: none;
+    //选中的操作栏字体样式
+    .active-main {
+      color: white;
+    }
   }
 
-  .el-table__body tr.current-row > td {
-    background-color: #409EFF;
+  .el-table--striped .el-table__body tr.el-table__row--striped.current-row td {
+    background-color: #409EFF !important;
     color: white;
-    pointer-events: none;
+    //pointer-events: none;
+    //选中的操作栏字体样式
+    .active-main {
+      color: white;
+    }
   }
+
 }
 
 //修改左菜单自定义icon样式
