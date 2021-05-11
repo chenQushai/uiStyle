@@ -166,6 +166,12 @@
                         menuName: '表单常用控件',
                         url: '/home/formAll',
                         children: []
+                    },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: '页头',
+                        url: '/home/pageHead',
+                        children: []
                     }
                 ],
             }

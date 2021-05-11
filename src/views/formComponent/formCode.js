@@ -31,6 +31,18 @@ export default  {
     <el-input v-model="input" size="mini" placeholder="请输入内容"></el-input>
     <!--data-->
     input: ''
+    `,
+
+
+    selectCode: `
+     <el-select v-model="selectValue" placeholder="请选择">
+          <el-option
+               v-for="item in options"
+               :key="item.value"
+               :label="item.label"
+               :value="item.value">
+           </el-option>
+     </el-select>
     `
 
 }

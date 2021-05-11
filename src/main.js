@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import router from './router'
 import store from './store'
-import App from './App.vue'
 
 import scroll from 'vue-seamless-scroll'
 import {vuePlugin} from 'castle-haozijunqaq-utils'
@@ -9,7 +8,7 @@ import VueCodemirror from 'vue-codemirror'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'codemirror/lib/codemirror.css'
-
+import App from './App.vue'
 //详见官方文档查看更多主题
 import 'codemirror/theme/darcula.css'
 

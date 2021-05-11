@@ -59,6 +59,11 @@ let routes = [
                 name: 'formAll',
                 component: () => import('../views/formComponent/formAll')
             },
+            {
+                path: 'pageHead',
+                name: 'pageHead',
+                component: () => import('../views/pageHead/pageHead')
+            }
         ],
     },
     {

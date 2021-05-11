@@ -2,57 +2,116 @@
     <div class="padding-10">
         <div class="container">
             <div class="content">
-                <div ref="basisTable" class="header-nav-divider">基础表格样式</div>
+
+                <div ref="basisTable1" class="header-nav-divider">对齐</div>
+                <p class="module-introduced">
+                    表格内的信息通过对齐，会更加规范易理解，给用户视觉上的统一感，且视线流动顺畅，能够让人快速的捕捉到所要的内容。
+                </p>
+                <p class="module-introduced"> 1.文本信息左对齐，因为现代人的阅读方式习惯从左到右，符合正常的心智(注:时间左对齐)﹔</p>
+                <p class="module-introduced"> 2.数据信息右对齐，更加方便数字大小的直观对比（如价格、数据统计，带有数据对比的)﹔</p>
+                <p class="module-introduced"> 3.固定内容居中对齐，更好的信息呈现及表格空间的节省(如1首列序号，建议采用两位展示“01");</p>
+                <p class="module-introduced"> 4.表头与信息内容对齐方式一致，一致性以达到简化，降低视觉噪音。</p>
+
+                <div ref="basisTable" class="header-nav-divider">斑马纹基础表格样式</div>
 
                 <p class="module-introduced">此处只演示基础表格样式,更多表格详见<a
-                        href="https://element.eleme.cn/#/zh-CN/component/table" target="_blank">element-ui表格组件</a>
+                    href="https://element.eleme.cn/#/zh-CN/component/table" target="_blank">element-ui表格组件</a>
                 </p>
 
                 <el-table
-                        :data="tableData"
-                        :height="268"
-                        stripe
-                        border
-                        highlight-current-row
-                        :header-row-style="{background:'#F2F7FF'}"
-                        :header-cell-style="{background:'transparent'}"
-                        style="width: 100%">
+                    :data="tableData"
+                    :height="268"
+                    stripe
+                    highlight-current-row
+                    :header-row-style="{background:'#E0EFFF'}"
+                    :header-cell-style="{background:'transparent'}"
+                    style="width: 100%">
                     <el-table-column
-                            label="序号"
-                            type="index"
-                            width="70">
+                        label="序号"
+                        type="index"
+                        width="70">
                     </el-table-column>
                     <el-table-column
-                            label="字段"
-                            align="left"
-                            prop="zd">
+                        label="字段"
+                        align="left"
+                        prop="zd">
                     </el-table-column>
                     <el-table-column
-                            label="是否只读"
-                            align="left"
-                            prop="bt">
+                        label="是否只读"
+                        align="left"
+                        prop="bt">
                         <template slot-scope="scope">
                             <el-checkbox v-model="scope.row.isOnlyRead">备选项</el-checkbox>
                         </template>
                     </el-table-column>
                     <el-table-column
-                            label="更新字段"
-                            align="left"
-                            prop="cd">
+                        label="更新字段"
+                        align="left"
+                        prop="cd">
                     </el-table-column>
                     <el-table-column
-                            label="附带更新字段"
-                            align="left"
-                            prop="cd">
+                        label="附带更新字段"
+                        align="left"
+                        prop="cd">
                     </el-table-column>
                     <el-table-column
-                            label="写入字段"
-                            align="left"
-                            prop="xrzd">
+                        label="写入字段"
+                        align="left"
+                        prop="xrzd">
                     </el-table-column>
                 </el-table>
 
                 <codemirror class="margin-top20" v-model="basicTable"/>
+
+
+                <div ref="borderTable" class="header-nav-divider">斑马纹线框表格</div>
+                <p class="module-introduced">线框和边框表格</p>
+                <el-table
+                    :data="tableData"
+                    :height="268"
+                    stripe
+                    border
+                    highlight-current-row
+                    :header-row-style="{background:'#E0EFFF'}"
+                    :header-cell-style="{background:'transparent'}"
+                    style="width: 100%">
+                    <el-table-column
+                        label="序号"
+                        type="index"
+                        width="70">
+                    </el-table-column>
+                    <el-table-column
+                        label="字段"
+                        align="left"
+                        prop="zd">
+                    </el-table-column>
+                    <el-table-column
+                        label="是否只读"
+                        align="left"
+                        prop="bt">
+                        <template slot-scope="scope">
+                            <el-checkbox v-model="scope.row.isOnlyRead">备选项</el-checkbox>
+                        </template>
+                    </el-table-column>
+                    <el-table-column
+                        label="更新字段"
+                        align="left"
+                        prop="cd">
+                    </el-table-column>
+                    <el-table-column
+                        label="附带更新字段"
+                        align="left"
+                        prop="cd">
+                    </el-table-column>
+                    <el-table-column
+                        label="写入字段"
+                        align="left"
+                        prop="xrzd">
+                    </el-table-column>
+                </el-table>
+
+                <codemirror class="margin-top20" v-model="borderTable"/>
+
 
 
                 <p ref="rowStyle" class="module-introduced">当表格行类需要根据条件修改样式时,添加row-style属性，回调方法返回样式对象</p>
@@ -77,47 +136,47 @@
                     </div>
                 </div>
                 <el-table
-                        :data="tableData"
-                        :height="268"
-                        stripe
-                        border
-                        highlight-current-row
-                        :header-row-style="{background:'#F2F7FF'}"
-                        :header-cell-style="{background:'transparent'}"
-                        :row-style="renderRelationed"
-                        style="width: 100%">
+                    :data="tableData"
+                    :height="268"
+                    stripe
+                    border
+                    highlight-current-row
+                    :header-row-style="{background:'#E0EFFF'}"
+                    :header-cell-style="{background:'transparent'}"
+                    :row-style="renderRelationed"
+                    style="width: 100%">
                     <el-table-column
-                            label="序号"
-                            type="index"
-                            width="70">
+                        label="序号"
+                        type="index"
+                        width="70">
                     </el-table-column>
                     <el-table-column
-                            label="字段"
-                            align="left"
-                            prop="zd">
+                        label="字段"
+                        align="left"
+                        prop="zd">
                     </el-table-column>
                     <el-table-column
-                            label="是否只读"
-                            align="left"
-                            prop="bt">
+                        label="是否只读"
+                        align="left"
+                        prop="bt">
                         <template slot-scope="scope">
                             <el-checkbox v-model="scope.row.isOnlyRead">备选项</el-checkbox>
                         </template>
                     </el-table-column>
                     <el-table-column
-                            label="更新字段"
-                            align="left"
-                            prop="cd">
+                        label="更新字段"
+                        align="left"
+                        prop="cd">
                     </el-table-column>
                     <el-table-column
-                            label="附带更新字段"
-                            align="left"
-                            prop="cd">
+                        label="附带更新字段"
+                        align="left"
+                        prop="cd">
                     </el-table-column>
                     <el-table-column
-                            label="写入字段"
-                            align="left"
-                            prop="xrzd">
+                        label="写入字段"
+                        align="left"
+                        prop="xrzd">
                     </el-table-column>
                 </el-table>
 
@@ -127,24 +186,24 @@
 
                 <div class="table-height-current">
                     <el-table
-                            :data="sysData"
-                            :height="288"
-                            stripe
-                            border
-                            highlight-current-row
-                            :header-row-style="{background:'#F2F7FF'}"
-                            :header-cell-style="{background:'transparent'}"
-                            style="width: 100%">
+                        :data="sysData"
+                        :height="288"
+                        stripe
+                        border
+                        highlight-current-row
+                        :header-row-style="{background:'#E0EFFF'}"
+                        :header-cell-style="{background:'transparent'}"
+                        style="width: 100%">
                         <el-table-column
-                                label="编码"
-                                align="center"
-                                prop="code"
-                                width="120">
+                            label="编码"
+                            align="center"
+                            prop="code"
+                            width="120">
                         </el-table-column>
                         <el-table-column
-                                label="系统名称"
-                                align="center"
-                                prop="name">
+                            label="系统名称"
+                            align="center"
+                            prop="name">
                         </el-table-column>
                     </el-table>
                 </div>
@@ -154,29 +213,29 @@
                 <p ref="operatorColumn" class="module-introduced">当需要在表格里添加操作栏时在column组件里添加template插槽</p>
 
                 <el-table
-                        :data="sysData"
-                        :height="288"
-                        stripe
-                        border
-                        highlight-current-row
-                        :header-row-style="{background:'#F2F7FF'}"
-                        :header-cell-style="{background:'transparent'}"
-                        style="width: 100%">
+                    :data="sysData"
+                    :height="288"
+                    stripe
+                    border
+                    highlight-current-row
+                    :header-row-style="{background:'#E0EFFF'}"
+                    :header-cell-style="{background:'transparent'}"
+                    style="width: 100%">
                     <el-table-column
-                            label="编码"
-                            align="center"
-                            prop="code"
-                            width="120">
+                        label="编码"
+                        align="center"
+                        prop="code"
+                        width="120">
                     </el-table-column>
                     <el-table-column
-                            label="系统名称"
-                            align="center"
-                            prop="name">
+                        label="系统名称"
+                        align="center"
+                        prop="name">
                     </el-table-column>
                     <el-table-column
-                            label="操作"
-                            align="center"
-                            width="180">
+                        label="操作"
+                        align="center"
+                        width="180">
                         <template slot-scope="scope">
                             <span class="blue-main pointer">编辑</span>
                             <span class="green-main margin-left10 pointer">保存</span>
@@ -191,19 +250,19 @@
                 <p ref="editTable" class="module-introduced">编辑表格，当需要编辑表格时，在每个列中插入template以及编辑框，编辑框可以是任意表单</p>
 
                 <el-table
-                        :data="editTable"
-                        :height="288"
-                        stripe
-                        border
-                        highlight-current-row
-                        :header-row-style="{background:'#F2F7FF'}"
-                        :header-cell-style="{background:'transparent'}"
-                        style="width: 100%">
+                    :data="editTable"
+                    :height="288"
+                    stripe
+                    border
+                    highlight-current-row
+                    :header-row-style="{background:'#E0EFFF'}"
+                    :header-cell-style="{background:'transparent'}"
+                    style="width: 100%">
                     <el-table-column
-                            label="编码"
-                            align="center"
-                            prop="code"
-                            min-width="120">
+                        label="编码"
+                        align="center"
+                        prop="code"
+                        min-width="120">
                         <template slot-scope="scope">
                             <span v-if="!scope.row.edit">{{scope.row.code}}</span>
                             <el-input v-if="scope.row.edit" v-model="scope.row.code" size="mini"></el-input>
@@ -211,10 +270,10 @@
                     </el-table-column>
 
                     <el-table-column
-                            label="名称"
-                            align="left"
-                            prop="name"
-                            min-width="150">
+                        label="名称"
+                        align="left"
+                        prop="name"
+                        min-width="150">
                         <template slot-scope="scope">
                             <span v-if="!scope.row.edit">{{scope.row.name}}</span>
                             <el-input v-if="scope.row.edit" v-model="scope.row.name" size="mini"></el-input>
@@ -222,10 +281,10 @@
                     </el-table-column>
 
                     <el-table-column
-                            label="拼音码"
-                            align="left"
-                            prop="pym"
-                            width="100">
+                        label="拼音码"
+                        align="left"
+                        prop="pym"
+                        width="100">
                         <template slot-scope="scope">
                             <span v-if="!scope.row.edit">{{scope.row.pym}}</span>
                             <el-input v-if="scope.row.edit" v-model="scope.row.pym" size="mini"></el-input>
@@ -233,20 +292,20 @@
                     </el-table-column>
 
                     <el-table-column
-                            label="可用性"
-                            align="center"
-                            prop="canUse"
-                            width="70">
+                        label="可用性"
+                        align="center"
+                        prop="canUse"
+                        width="70">
                         <template slot-scope="scope">
                             <el-checkbox v-model="scope.row.canUse"></el-checkbox>
                         </template>
                     </el-table-column>
 
                     <el-table-column
-                            label="备注"
-                            align="left"
-                            prop="bz"
-                            min-width="220">
+                        label="备注"
+                        align="left"
+                        prop="bz"
+                        min-width="220">
                         <template slot-scope="scope">
                             <span v-if="!scope.row.edit">{{scope.row.bz}}</span>
                             <el-input v-if="scope.row.edit" v-model="scope.row.bz"></el-input>
@@ -254,10 +313,10 @@
                     </el-table-column>
 
                     <el-table-column
-                            label="操作"
-                            align="left"
-                            prop="bz"
-                            width="220">
+                        label="操作"
+                        align="left"
+                        prop="bz"
+                        width="220">
                         <template slot-scope="scope">
                             <span class="blue-main pointer" v-if="!scope.row.edit" @click="editRow(scope.row)">编辑</span>
                             <span class="green-main pointer" v-if="scope.row.edit"
@@ -275,27 +334,27 @@
                     持input框和date-pick框，v-model绑定值，type值类型，text:input框，date: date-pick</p>
 
                 <el-table
-                        :data="sysData"
-                        :height="288"
-                        stripe
-                        border
-                        highlight-current-row
-                        :header-row-style="{background:'#F2F7FF'}"
-                        :header-cell-style="{background:'transparent'}"
-                        style="width: 100%">
+                    :data="sysData"
+                    :height="288"
+                    stripe
+                    border
+                    highlight-current-row
+                    :header-row-style="{background:'#E0EFFF'}"
+                    :header-cell-style="{background:'transparent'}"
+                    style="width: 100%">
                     <el-table-column
-                            label="编码"
-                            align="center"
-                            prop="code"
-                            width="120">
+                        label="编码"
+                        align="center"
+                        prop="code"
+                        width="120">
                         <template slot-scope="scope">
                             <editable-cell v-model="scope.row.code" :type="'text'"></editable-cell>
                         </template>
                     </el-table-column>
                     <el-table-column
-                            label="系统名称"
-                            align="center"
-                            prop="name">
+                        label="系统名称"
+                        align="center"
+                        prop="name">
                         <template slot-scope="scope">
                             <editable-cell v-model="scope.row.name" :type="'text'"></editable-cell>
                         </template>
@@ -314,20 +373,18 @@
 
                 <div class="pagination">
                     <el-pagination
-                            background
-                            :page-sizes="[10, 20,30]"
-                            @size-change="handleSizeChange"
-                            @current-change="handleCurrentChange"
-                            :page-size="pageSize"
-                            :current-page.sync="currentPage"
-                            layout=" total,prev, pager, next, sizes"
-                            :total="total" class="right">
+                        background
+                        :page-sizes="[10, 20,30]"
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        :page-size="pageSize"
+                        :current-page.sync="currentPage"
+                        layout=" total,prev, pager, next, sizes"
+                        :total="total" class="right">
                     </el-pagination>
                 </div>
 
                 <codemirror class="margin-top20" v-model="pagination"/>
-
-
 
 
             </div>
@@ -391,6 +448,7 @@
                     }
                 ],
                 basicTable: tableCode.basicTable,
+                borderTable: tableCode.borderTable,
                 rowStyle: tableCode.rowStyle,
                 selectCurrent: tableCode.selectCurrent,
                 operatorRow: tableCode.operatorRow,
@@ -403,7 +461,11 @@
             this.$store.commit("changeNavList", [
                 {
                     el: 'basisTable',
-                    title: "基础表格"
+                    title: "斑马纹基础表格"
+                },
+                {
+                    el: 'borderTable',
+                    title: "线框表格"
                 },
                 {
                     el: 'rowStyle',
