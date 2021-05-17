@@ -47,9 +47,33 @@
             headDom.onmousedown = (e) => {
                 let disX = e.offsetX;
                 let disY = e.offsetY;
+                //弹窗在可视区减去自身宽度的距离
+                let dialogScreenWidth = document.body.clientWidth - dialog.offsetWidth;
+                //弹窗在可视区减去自身高度的距离
+                let dialogScreenHeight = document.body.clientHeight - dialog.offsetHeight;
                 document.onmousemove = (e) => {
-                    dialog.style.left = `${e.clientX - disX}px`;
-                    dialog.style.top = `${e.clientY - disY}px`;
+                    if (e.clientX - disX < 0) {
+                        dialog.style.left = '0px';
+                    }
+                    else if (e.clientX - disX > dialogScreenWidth) {
+                        dialog.style.left = `${dialogScreenWidth}px`;
+                    }
+                    else {
+                        dialog.style.left = `${e.clientX - disX}px`;
+                    }
+
+
+                    if (e.clientY - disY < 0) {
+                        dialog.style.top = '0px';
+                    }
+                    else if (e.clientY - disY > dialogScreenHeight) {
+                        dialog.style.top = `${dialogScreenHeight}px`;
+                    }
+                    else {
+                        dialog.style.top = `${e.clientY - disY}px`;
+                    }
+
+
                 };
 
                 document.onmouseup = () => {

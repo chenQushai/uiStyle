@@ -239,7 +239,6 @@
                 });
 
                 this.ItemTabsValue = index;
-
             },
 
             tabClick(tab) {
@@ -343,7 +342,6 @@
     .aside {
         box-shadow: 1px 0px 3px rgba(25, 41, 63, 0.1);
         overflow: auto;
-
     }
 
     .router-view {
