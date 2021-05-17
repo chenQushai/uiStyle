@@ -1,13 +1,19 @@
 <template>
+    <div class="container">
+        <div ref="fish" class="header-nav-divider">鱼骨图</div>
+        <p class="module-introduced"> 1.安装</p>
+        <p class="module-introduced"> npm install cky-fish-bone</p>
+        <p class="module-introduced">这里只做简单介绍，更多详见<a href="https://www.npmjs.com/package/cky-fish-bone" target="_blank">鱼骨图文档说明</a></p>
+        <fishBone
+            :data="fishData"
+            :start-title="'住院'"
+            theme="#459DF5"
+            @handClick="child"
+            :prop="{top: 't',bottom: 'b'}"
+        >
+        </fishBone>
+    </div>
 
-    <fishBone
-        :data="fishData"
-        :start-title="'住院'"
-        theme="#459DF5"
-        @handClick="child"
-        :prop="{top: 't',bottom: 'b'}"
-    >
-    </fishBone>
 
 </template>
 
@@ -112,6 +118,14 @@
                     },
                 ]
             }
+        },
+        mounted() {
+            this.$store.commit("changeNavList", [
+                {
+                    el: "fish",
+                    title: '鱼骨图'
+                }
+            ]);
         },
         methods: {
             child(c) {

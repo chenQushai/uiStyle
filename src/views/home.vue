@@ -178,12 +178,18 @@
                         menuName: '可移动的弹窗',
                         url: '/home/moveDialog',
                         children: []
+                    },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: '鱼骨图',
+                        url: '/home/fishBone',
+                        children: []
                     }
                 ],
             }
         },
         created() {
-            this.$router.replace('/home/moveDialog');
+            this.$router.replace('/home/generalCss');
         },
         mounted() {
 

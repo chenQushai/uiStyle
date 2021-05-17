@@ -10,11 +10,11 @@
             <span class="moveDialog__close__button  el-icon-close" @click="closeDialog"></span>
         </div>
 
-        <div class="moveDialog__body">
+        <div class="moveDialog__body" :style="computedBodyHeight">
             <slot></slot>
         </div>
 
-        <div class="moveDialog__footer">
+        <div class="moveDialog__footer" v-if="$slots.footer">
             <slot name="footer"></slot>
         </div>
     </div>
@@ -33,6 +33,10 @@
                 default: ''
             },
             width: {
+                type: String,
+                default: ''
+            },
+            height: {
                 type: String,
                 default: ''
             }
@@ -70,6 +74,19 @@
                     else {
                         style.width = `${this.width}px`
                     }
+                }
+                return style
+            },
+            computedBodyHeight() {
+                let style = {};
+                if (this.height) {
+                    if (this.height.indexOf('px') > 0) {
+                        style.height = this.height
+                    }
+                    else {
+                        style.height = `${this.height}px`
+                    }
+                    style.overflow = 'auto';
                 }
                 return style
             }

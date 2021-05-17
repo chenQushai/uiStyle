@@ -5,7 +5,7 @@
             title="可移动的弹窗"
             width="980px"
         >
-            <div>
+            <div >
                 主题区
             </div>
             <template v-slot:footer>
@@ -20,8 +20,8 @@
         <p class="module-introduced"> 1.visible 默认fasle,可通过添加.sync后缀。</p>
         <p class="module-introduced"> 2.title，弹窗名称。</p>
         <p class="module-introduced"> 3.width，弹窗宽度。</p>
-        <p class="module-introduced"> 4.默认内容插入到弹窗主题，插槽slot-footer 可添加底部功能</p>
-
+        <p class="module-introduced"> 4.height，设置的是弹窗body的高度，并不是整个弹窗高度。设置高度后body内容超过height的值body将出现滚动</p>
+        <p class="module-introduced"> 5.默认内容插入到弹窗主题，插槽slot-footer 可添加底部功能</p>
 
         <codemirror class="margin-top20" v-model="dialog"/>
     </div>
@@ -30,6 +30,7 @@
 <script>
     import moveDialog from './moveDialog'
     import moveDialogCode from './dialogCode'
+
     export default {
         name: "moveDialogPage",
         data() {

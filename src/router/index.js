@@ -67,14 +67,15 @@ let routes = [
                 path: 'moveDialog',
                 name: 'moveDialog',
                 component: () => import('../views/moveDialog/moveDialogPage')
-            }
+            },
+            {
+                path: 'fishBone',
+                name: 'fishBone',
+                component: () => import('../views/fishBone/fishBonePage')
+            },
         ],
     },
-    {
-        path: '/fishBone',
-        name: 'fishBone',
-        component: () => import('../views/fishBone/fishBonePage')
-    },
+
     {
         path: '/test',
         name: 'test',
