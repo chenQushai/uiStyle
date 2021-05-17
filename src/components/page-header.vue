@@ -26,6 +26,7 @@
         display: flex;
         width: 100%;
         height: 48px;
+        border-bottom: 1px solid #D9D9D9;
         .page__title {
             line-height: 24px;
             font-size: 18px;

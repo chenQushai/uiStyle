@@ -172,13 +172,18 @@
                         menuName: '页头',
                         url: '/home/pageHead',
                         children: []
+                    },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: '可移动的弹窗',
+                        url: '/home/moveDialog',
+                        children: []
                     }
                 ],
             }
         },
         created() {
-            // this.$router.replace('/fishBone')
-
+            this.$router.replace('/home/moveDialog');
         },
         mounted() {
 
