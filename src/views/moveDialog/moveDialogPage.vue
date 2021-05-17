@@ -3,7 +3,7 @@
         <moveDialog
             :visible.sync="show"
             title="可移动的弹窗"
-            width="980px"
+            width="800px"
         >
             <div >
                 主题区

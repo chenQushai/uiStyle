@@ -1,6 +1,6 @@
 <template>
     <div
-        class="moveDialog"
+        :class="active ? ['moveDialog','moveDialog--opacity'] : ['moveDialog']"
         ref="dialog"
         v-show="visible"
         :style="computedWidth"
@@ -41,10 +41,16 @@
                 default: ''
             }
         },
+        data() {
+            return {
+                active: false
+            }
+        },
         mounted() {
             let headDom = this.$refs.headDom;
             let dialog = this.$refs.dialog;
             headDom.onmousedown = (e) => {
+                this.active = true;
                 let disX = e.offsetX;
                 let disY = e.offsetY;
                 //弹窗在可视区减去自身宽度的距离
@@ -77,6 +83,7 @@
                 };
 
                 document.onmouseup = () => {
+                    this.active = false;
                     document.onmousemove = null;
                     document.onmouseup = null;
                 };
@@ -148,5 +155,8 @@
         .moveDialog__footer {
             padding: 8px 10px;
         }
+    }
+    .moveDialog--opacity {
+        opacity: 0.5;
     }
 </style>
