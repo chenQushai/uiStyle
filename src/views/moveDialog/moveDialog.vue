@@ -7,7 +7,7 @@
     >
         <div ref="headDom" class="moveDialog__header">
             <span class="moveDialog__title">{{title}}</span>
-            <span class="moveDialog__close__button  el-icon-close" @click="closeDialog"></span>
+            <span class="moveDialog__close__button  el-icon-close" @click.stop="closeDialog"></span>
         </div>
 
         <div class="moveDialog__body" :style="computedBodyHeight">
