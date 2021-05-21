@@ -20,7 +20,7 @@
 </template>
 
 <script>
-    import modulesLoading from  './modulesLoading'
+    import modulesLoading from './modulesLoadingCode'
     export default {
         name: "modulesLoading",
         data() {

@@ -195,7 +195,7 @@
             }
         },
         created() {
-            this.$router.replace('/home/modulesLoading');
+            this.$router.replace('/home/generalCss');
         },
         mounted() {
 
