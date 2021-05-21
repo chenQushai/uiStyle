@@ -73,6 +73,11 @@ let routes = [
                 name: 'fishBone',
                 component: () => import('../views/fishBone/fishBonePage')
             },
+            {
+                path: 'modulesLoading',
+                name: 'modulesLoading',
+                component: () => import('../views/modulesLoading/modulesLoading')
+            }
         ],
     },
 

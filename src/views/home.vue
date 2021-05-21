@@ -184,12 +184,18 @@
                         menuName: '鱼骨图',
                         url: '/home/fishBone',
                         children: []
+                    },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: '模块懒加载',
+                        url: '/home/modulesLoading',
+                        children: []
                     }
                 ],
             }
         },
         created() {
-            this.$router.replace('/home/generalCss');
+            this.$router.replace('/home/modulesLoading');
         },
         mounted() {
 
