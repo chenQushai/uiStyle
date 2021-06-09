@@ -32,13 +32,13 @@ el-world-8.font-align-both {
 //百分比均以最小宽度980px设置
 //修改mini 表单间距
 .el-form-item--mini.el-form-item {
-  margin-bottom: 10px !important;
+  margin-bottom: 8px !important;
 }
 
 //必填时的间距
 .required-item {
-  /deep/ .el-form-item--mini.el-form-item {
-    margin-bottom: 15px !important;
+  .el-form-item--mini.el-form-item {
+    margin-bottom: 16px !important;
   }
 }
 
@@ -277,31 +277,43 @@ el-world-8.font-align-both {
   }
 }
 
+//线框表格
+.el-table--border, .el-table--group {
+  border: 1px solid #BFDEFF;
+}
 
-
+.el-table--border td, .el-table--border th, .el-table__body-wrapper .el-table--border.is-scrolling-left ~ .el-table__fixed {
+  border-right: 1px solid #BFDEFF;
+  border-bottom: 1px solid #BFDEFF;
+}
 
 //斑马纹样式
 .el-table--striped .el-table__body tr.el-table__row--striped td {
   background: #F0F7FF;
 }
 
-.el-table .cell, .el-table--border td:first-child .cell, .el-table--border th:first-child .cell {
-  padding-left: 19px;
+//.el-table .cell, .el-table--border td:first-child .cell, .el-table--border th:first-child .cell {
+//  padding-left: 19px;
+//}
+
+//一般的点击当前行
+.el-table__body tr.current-row > td {
+  background-color: transparent;
 }
 
 //hover到表格样式
-
 .el-table--enable-row-hover .el-table__body tr:hover > td {
-  background: #D6EAFF;
+  background: #B2D7FF;
+  cursor: pointer;
 }
 
 //hover到表格样式
 .el-table__body tr.hover-row.el-table__row--striped.current-row > td, .el-table__body tr.hover-row.el-table__row--striped > td, .el-table__body tr.hover-row > td {
-  background-color: #D6EAFF
+  background-color: #B2D7FF
 }
 
 .el-table td, .el-table th {
-  padding: 7px 0 !important;
+  padding: 4px 0 !important;
 }
 
 //小型表格一般用于表格内嵌表格
@@ -311,8 +323,13 @@ el-world-8.font-align-both {
   }
 }
 
+//单元格左边距
 .el-table th > .cell {
-  padding-left: 14px !important;
+  padding-left: 16px !important;
+}
+
+.el-table .cell, .el-table--border td:first-child .cell, .el-table--border th:first-child .cell {
+  padding-left: 16px;
 }
 
 //高度38px下 排序按钮样式
@@ -331,7 +348,7 @@ el-world-8.font-align-both {
 .table-height-current {
   //表格选中高亮行颜色
   .el-table__body tr.current-row > td {
-    background-color: #007AFF !important;
+    background-color: #8CC3FF !important;
     color: white;
     //pointer-events: none;
     //选中的操作栏字体样式
@@ -341,7 +358,7 @@ el-world-8.font-align-both {
   }
 
   .el-table--striped .el-table__body tr.el-table__row--striped.current-row td {
-    background-color: #007AFF !important;
+    background-color: #8CC3FF !important;
     color: white;
     //pointer-events: none;
     //选中的操作栏字体样式
@@ -350,6 +367,23 @@ el-world-8.font-align-both {
     }
   }
 
+}
+
+//表格分页器
+//带背景的分页
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+//带背景分页选中样式
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  border: none;
+}
+
+//分页的跳转控件
+.el-pagination__jump {
+  margin-left: 0px;
 }
 
 //修改左菜单自定义icon样式
@@ -464,6 +498,11 @@ el-world-8.font-align-both {
   color: #1890FF !important;
 }
 
+.el-menu-item, .el-submenu__title {
+  height: 40px;
+  line-height: 40px;
+}
+
 //修改dialog样式
 .el-dialog__header {
   border-bottom: 1px solid rgb(230, 230, 230);
@@ -556,9 +595,47 @@ el-world-8.font-align-both {
   background-color: #D6EAFF;
 }
 
+//下拉框选中
 .el-select-dropdown__item.selected {
   background-color: #A6D1FF;
   color: #595959;
 }
 
+//多选hover
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected.hover {
+  background-color: #D6EAFF;
+}
 
+//下拉框多选
+.el-select-dropdown.is-multiple .el-select-dropdown__item.selected {
+  background-color: #A6D1FF;
+  color: #595959;
+}
+
+//修改input框样式
+.el-input__inner {
+  border: 1px solid #d9d9d9;
+  padding: 0 8px;
+}
+
+//输入框hover
+.el-input__inner:hover {
+  border-color: #bfdeff;
+}
+
+//输入框禁用
+.el-input.is-disabled .el-input__inner {
+  background-color: #F5F5F5;
+  border-color: #d9d9d9;
+  color: #8c8c8c;
+}
+
+//下拉框样式
+.el-select:hover .el-input__inner {
+  border-color: #bfdeff;
+}
+
+//表单输入框的必填
+.el-form-item.is-required:not(.is-no-asterisk) .el-form-item__label-wrap>.el-form-item__label:before, .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before {
+  margin-right: 2px;
+}

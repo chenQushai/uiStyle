@@ -20,16 +20,16 @@
             </div>
         </el-header>
         <el-container>
-            <el-aside width="210px" class="aside">
+            <el-aside width="216px" class="aside">
 
                 <el-menu
-                        router
-                        unique-opened
-                        :default-active="defaultActive"
-                        class="el-menu-vertical-demo"
-                        background-color="#ffffff"
-                        text-color="#545c64"
-                        @select="addTab"
+                    router
+                    unique-opened
+                    :default-active="defaultActive"
+                    class="el-menu-vertical-demo"
+                    background-color="#ffffff"
+                    text-color="#545c64"
+                    @select="addTab"
                 >
                     <div v-for="(item,index) in menuData" :key="index">
                         <el-submenu :index="item.url" v-if="item.children.length > 0">
@@ -79,10 +79,10 @@
                                  @tab-click="tabClick"
                                  closable @tab-remove="removeTab">
                             <el-tab-pane
-                                    v-for="(item, index) in itemTabs"
-                                    :key="item.name"
-                                    :label="item.title"
-                                    :name="item.name"
+                                v-for="(item, index) in itemTabs"
+                                :key="item.name"
+                                :label="item.title"
+                                :name="item.name"
                             >
                             </el-tab-pane>
                         </el-tabs>
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="router-view">
-                    <router-view ref="childView" style="min-width: 1280px;"></router-view>
+                    <router-view ref="childView" style="min-width: 1224px;"></router-view>
                 </div>
 
                 <el-card class="box-card side-nav pointer">
@@ -344,7 +344,6 @@
         }
     }
 
-
     .aside {
         box-shadow: 1px 0px 3px rgba(25, 41, 63, 0.1);
         overflow: auto;
@@ -355,6 +354,7 @@
         height: calc(100% - 40px);
         overflow: auto;
         background-color: rgb(241, 245, 253);
+        padding: 8px;
     }
 
     .side-nav {

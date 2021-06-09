@@ -49,7 +49,7 @@
                 <div class="header-nav-divider">输入框</div>
                 <p class="module-introduced">输入框组件，更多详见<a href="https://element.eleme.cn/#/zh-CN/component/input"
                                                           target="_blank">element-ui输入框组件</a></p>
-                <el-input v-model="input" size="mini" placeholder="请输入内容"></el-input>
+                <el-input v-model="input"  size="mini" placeholder="请输入内容"></el-input>
 
                 <codemirror class="margin-top20" v-model="inputCode"/>
 
@@ -57,7 +57,7 @@
                 <p class="module-introduced">下拉框组件，更多详见<a href="https://element.eleme.cn/#/zh-CN/component/select"
                                                           target="_blank">element-ui输入框组件</a></p>
 
-                <el-select v-model="selectValue" size="mini" multiple placeholder="请选择">
+                <el-select v-model="selectValue"  size="mini" multiple placeholder="请选择">
                     <el-option
                         v-for="item in options"
                         :key="item.value"

@@ -1,5 +1,5 @@
 <template>
-    <div class="padding-10">
+    <div>
         <div class="container">
             <div class="content">
                 <div ref="formCom" class="header-nav-divider">常用表单组件</div>
@@ -13,7 +13,7 @@
                     <el-form ref="form" :model="form" :inline="true" size="mini">
                         <div class="form-box border-gray">
                             <p class="divider-tag">4列4词表单</p>
-                            <el-row :gutter="10">
+                            <el-row :gutter="16">
                                 <el-col :span="6" class="el-world-4">
                                     <el-form-item label="姓名:">
                                         <el-input v-model="form.name"></el-input>
@@ -39,6 +39,14 @@
                                     </el-form-item>
                                 </el-col>
 
+                            </el-row>
+
+                            <el-row :gutter="16">
+                                <el-col :span="6" class="el-world-4">
+                                    <el-form-item label="身份证号:">
+                                        <el-input v-model="form.idCard"></el-input>
+                                    </el-form-item>
+                                </el-col>
                             </el-row>
                         </div>
                     </el-form>
@@ -224,7 +232,7 @@
                     <el-form ref="form" :model="form" :inline="true" :rules="rules" size="mini">
                         <div class="form-box border-gray">
                             <p class="divider-tag">必填</p>
-                            <el-row :gutter="10">
+                            <el-row class="required-item" :gutter="16">
                                 <el-col :span="8" class="el-world-8 el-world-color-red">
                                     <el-form-item label="姓名:" prop="name">
                                         <el-input v-model="form.name"></el-input>
@@ -243,6 +251,15 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+
+                            <el-row class="required-item" :gutter="16">
+                                <el-col :span="8" class="el-world-8 el-world-color-red">
+                                    <el-form-item label="姓名:" prop="name">
+                                        <el-input v-model="form.name"></el-input>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
+
                         </div>
                     </el-form>
                 </div>

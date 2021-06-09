@@ -1,5 +1,5 @@
 <template>
-    <div class="padding-10">
+    <div>
         <div class="container">
             <div class="content">
                 <div ref="nomalElment" class="header-nav-divider">基本元素</div>

@@ -235,12 +235,12 @@
                     <el-table-column
                         label="操作"
                         align="center"
-                        width="180">
+                        width="220">
                         <template slot-scope="scope">
                             <span class="blue-main pointer">编辑</span>
-                            <span class="green-main margin-left10 pointer">保存</span>
-                            <span class="red-main margin-left10 pointer">删除</span>
-                            <span class="red-main margin-left10 pointer">停用</span>
+                            <span class="green-main margin-left16 pointer">保存</span>
+                            <span class="red-main margin-left16 pointer">删除</span>
+                            <span class="red-main margin-left16 pointer">停用</span>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -319,7 +319,7 @@
                         width="220">
                         <template slot-scope="scope">
                             <span class="blue-main pointer" v-if="!scope.row.edit" @click="editRow(scope.row)">编辑</span>
-                            <span class="green-main pointer" v-if="scope.row.edit"
+                            <span class="green-main pointer margin-right16" v-if="scope.row.edit"
                                   @click="confirmRow(scope.row)">保存</span>
                             <span class="red-main margin-left10 pointer" @click="delRow(scope.$index)">删除</span>
                         </template>
@@ -379,14 +379,47 @@
                         @current-change="handleCurrentChange"
                         :page-size="pageSize"
                         :current-page.sync="currentPage"
-                        layout=" total,prev, pager, next, sizes"
+                        layout=" total,prev, pager, next, sizes,jumper"
                         :total="total" class="right">
                     </el-pagination>
                 </div>
 
                 <codemirror class="margin-top20" v-model="pagination"/>
 
+                <div ref="checkTable" class="header-nav-divider">复选框表格</div>
 
+                <el-table
+                    :data="sysData"
+                    :height="288"
+                    stripe
+                    border
+                    highlight-current-row
+                    :header-row-style="{background:'#E0EFFF'}"
+                    :header-cell-style="{background:'transparent'}"
+                    style="width: 100%">
+                    <el-table-column
+                        type="selection"
+                        align="left"
+                        width="55">
+                    </el-table-column>
+                    <el-table-column
+                        label="编码"
+                        align="center"
+                        prop="code"
+                        width="120">
+                        <template slot-scope="scope">
+                            <editable-cell v-model="scope.row.code" :type="'text'"></editable-cell>
+                        </template>
+                    </el-table-column>
+                    <el-table-column
+                        label="系统名称"
+                        align="center"
+                        prop="name">
+                        <template slot-scope="scope">
+                            <editable-cell v-model="scope.row.name" :type="'text'"></editable-cell>
+                        </template>
+                    </el-table-column>
+                </el-table>
             </div>
         </div>
     </div>
@@ -490,6 +523,10 @@
                 {
                     el: 'pagination',
                     title: '分页器'
+                },
+                {
+                    el: 'checkTable',
+                    title: '复选框表格'
                 }
 
             ]);
