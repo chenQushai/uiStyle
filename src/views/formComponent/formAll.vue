@@ -9,13 +9,23 @@
                     href="https://element.eleme.cn/#/zh-CN/component/button" target="_blank">element-ui按钮控件</a></p>
 
                 <p class="module-introduced">所有按钮规范高度均为32px</p>
+                <el-row>
+                    <el-button size="mini">默认按钮</el-button>
+                    <el-button type="primary" size="mini">主要按钮</el-button>
+                    <el-button type="success" size="mini">成功按钮</el-button>
+                    <el-button type="info" size="mini">信息按钮</el-button>
+                    <el-button type="warning" size="mini">警告按钮</el-button>
+                    <el-button type="danger" size="mini">危险按钮</el-button>
+                </el-row>
 
-                <el-button size="mini">默认按钮</el-button>
-                <el-button type="primary" size="mini">主要按钮</el-button>
-                <el-button type="success" size="mini">成功按钮</el-button>
-                <el-button type="info" size="mini">信息按钮</el-button>
-                <el-button type="warning" size="mini">警告按钮</el-button>
-                <el-button type="danger" size="mini">危险按钮</el-button>
+                <el-row class="margin-top10">
+                    <el-button size="mini" plain>朴素按钮</el-button>
+                    <el-button size="mini" type="primary" plain>主要按钮</el-button>
+                    <el-button size="mini" type="success" plain>成功按钮</el-button>
+                    <el-button size="mini" type="info" plain>信息按钮</el-button>
+                    <el-button size="mini" type="warning" plain>警告按钮</el-button>
+                    <el-button size="mini" type="danger" plain>危险按钮</el-button>
+                </el-row>
 
                 <codemirror class="margin-top20" v-model="btn"/>
 
@@ -26,6 +36,14 @@
 
                 <el-radio v-model="radio" label="1">备选项</el-radio>
                 <el-radio v-model="radio" label="2">备选项</el-radio>
+
+                <p class="module-introduced">mini单选框</p>
+
+                <el-radio class="radio-mini" v-model="radio" label="1">备选项</el-radio>
+                <el-radio class="radio-mini" v-model="radio" label="2">备选项</el-radio>
+
+                <p class="module-introduced">禁用单选</p>
+                <el-radio class="radio-mini" v-model="radio" disabled label="1">备选项</el-radio>
 
                 <codemirror class="margin-top20" v-model="basicRadio"/>
 
@@ -49,15 +67,24 @@
                 <div class="header-nav-divider">输入框</div>
                 <p class="module-introduced">输入框组件，更多详见<a href="https://element.eleme.cn/#/zh-CN/component/input"
                                                           target="_blank">element-ui输入框组件</a></p>
-                <el-input v-model="input"  size="mini" placeholder="请输入内容"></el-input>
-
+                <el-input
+                    v-model="input"
+                    style="width: 176px"
+                    size="mini"
+                    placeholder="请输入内容">
+                </el-input>
                 <codemirror class="margin-top20" v-model="inputCode"/>
 
-                <div class="header-nav-divider">下拉框</div>
+                <div ref="selects" class="header-nav-divider">下拉框</div>
                 <p class="module-introduced">下拉框组件，更多详见<a href="https://element.eleme.cn/#/zh-CN/component/select"
                                                           target="_blank">element-ui输入框组件</a></p>
 
-                <el-select v-model="selectValue"  size="mini" multiple placeholder="请选择">
+                <el-select
+                    v-model="selectValue"
+                    style="width: 176px"
+                    size="mini"
+                    multiple
+                    placeholder="请选择">
                     <el-option
                         v-for="item in options"
                         :key="item.value"
@@ -67,6 +94,75 @@
                 </el-select>
 
                 <codemirror class="margin-top20" v-model="selectCode"/>
+
+                <div ref="filterSelectCode" class="header-nav-divider">下拉模糊搜索</div>
+                <p class="module-introduced">模糊搜索添加filterable即可</p>
+
+                <el-select
+                    v-model="selectValue"
+                    style="width: 176px"
+                    size="mini"
+                    multiple
+                    filterable
+                    placeholder="请选择">
+                    <el-option
+                        v-for="item in options"
+                        :key="item.value"
+                        :label="item.label"
+                        :value="item.value">
+                    </el-option>
+                </el-select>
+
+                <codemirror class="margin-top20" v-model="filterSelectCode"/>
+
+                <div ref="timeCom" class="header-nav-divider">日期控件</div>
+                <p class="module-introduced">日期控件，用于显示日期。</p>
+                <el-row :gutter="16">
+                    <el-col :span="6">
+                        <el-date-picker
+                            v-model="dateTime"
+                            type="date"
+                            size="mini"
+                            style="width: 176px"
+                            placeholder="选择日期">
+                        </el-date-picker>
+                    </el-col>
+
+                    <el-col :span="6">
+                        <el-date-picker
+                            v-model="month"
+                            type="month"
+                            size="mini"
+                            style="width: 176px"
+                            placeholder="选择日期">
+                        </el-date-picker>
+                    </el-col>
+
+                    <el-col :span="6">
+                        <el-date-picker
+                            v-model="week"
+                            type="week"
+                            size="mini"
+                            style="width: 176px"
+                            placeholder="选择日期">
+                        </el-date-picker>
+                    </el-col>
+                </el-row>
+                <codemirror class="margin-top20" v-model="dateCode"/>
+
+                <div ref="timeCom" class="header-nav-divider">时间控件</div>
+                <p class="module-introduced">时间控件，用于选择时间段。</p>
+
+                <el-row :gutter="16">
+                    <el-col :span="6">
+                        <el-time-picker
+                            v-model="timePoint"
+                            style="width: 176px"
+                            size="mini"
+                            placeholder="任意时间点">
+                        </el-time-picker>
+                    </el-col>
+                </el-row>
             </div>
         </div>
     </div>
@@ -103,11 +199,17 @@
                         label: '北京烤鸭'
                     }
                 ],
+                dateTime: '',
+                month: '',
+                week: '',
+                timePoint: '',
                 basicRadio: form.basicRadio,
                 radioGroup: form.radioGroup,
                 checkedCode: form.checkedCode,
                 inputCode: form.inputCode,
-                selectCode: form.selectCode
+                selectCode: form.selectCode,
+                filterSelectCode: form.filterSelectCode,
+                dateCode: form.dateCode
             }
         },
         mounted() {
@@ -123,6 +225,14 @@
                 {
                     el: 'checkedBox',
                     title: '复选框'
+                },
+                {
+                    el: 'selects',
+                    title: '下拉框'
+                },
+                {
+                    el: 'filterSelectCode',
+                    title: '模糊搜索'
                 }
 
             ]);

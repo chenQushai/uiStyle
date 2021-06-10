@@ -259,7 +259,7 @@ el-world-8.font-align-both {
 
 //修改mini按钮样式
 .el-button--mini {
-  padding: 9px 15px !important;
+  padding: 9px 16px !important;
 }
 
 //时间选择“至”
@@ -636,6 +636,56 @@ el-world-8.font-align-both {
 }
 
 //表单输入框的必填
-.el-form-item.is-required:not(.is-no-asterisk) .el-form-item__label-wrap>.el-form-item__label:before, .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before {
+.el-form-item.is-required:not(.is-no-asterisk) .el-form-item__label-wrap > .el-form-item__label:before, .el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
   margin-right: 2px;
+}
+
+//时间控件
+.el-date-table td.today span {
+  border: 1px solid #007AFF;;
+  border-radius: 0;
+}
+
+//选中的日期控件
+.el-date-table td.current:not(.disabled) span {
+  border-radius: 0;
+}
+
+//moth选项
+.el-month-table td.today .cell {
+  width: 37px;
+  height: 25px;
+  border-radius: 0;
+}
+
+//选中的month
+.el-month-table td.current:not(.disabled) .cell {
+  background: #007AFF;
+  color: #FFFFFF;
+}
+
+//单选框样式
+.el-radio__inner {
+  width: 16px;
+  height: 16px;
+}
+//单选悬浮
+.el-radio__inner:hover {
+  border: 1px solid #007AFF;
+}
+//单选选中
+.el-radio__input.is-checked .el-radio__inner {
+  border-color: #007AFF;
+  background: #007AFF;
+}
+
+.el-radio__label {
+  padding-left: 8px;
+}
+
+.radio-mini {
+  /deep/ .el-radio__inner {
+    width: 14px;
+    height: 14px;
+  }
 }

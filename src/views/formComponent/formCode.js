@@ -43,6 +43,26 @@ export default  {
                :value="item.value">
            </el-option>
      </el-select>
-    `
+    `,
 
+    filterSelectCode: `
+        <el-select v-model="selectValue" size="mini" multiple filterable placeholder="请选择">
+            <el-option
+                 v-for="item in options"
+                 :key="item.value"
+                 :label="item.label"
+                 :value="item.value">
+            </el-option>
+        </el-select>
+    `,
+
+    dateCode: `
+        <el-date-picker
+            v-model="dateTime"
+            type="date"
+            size="mini"
+            style="width: 176px"
+            placeholder="选择日期">
+        </el-date-picker>
+    `
 }
