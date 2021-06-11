@@ -64,5 +64,14 @@ export default  {
             style="width: 176px"
             placeholder="选择日期">
         </el-date-picker>
+    `,
+
+    switchCode: `
+    <el-switch
+        v-model="switchData"
+        active-color="#13ce66"
+        inactive-color="#ff4949">
+    </el-switch>
+    
     `
 }

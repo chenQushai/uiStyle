@@ -43,8 +43,9 @@
                 <el-radio class="radio-mini" v-model="radio" label="2">备选项</el-radio>
 
                 <p class="module-introduced">禁用单选</p>
-                <el-radio class="radio-mini" v-model="radio" disabled label="1">备选项</el-radio>
-
+                <div class="radio-mini">
+                    <el-radio  v-model="radio" disabled label="1">备选项</el-radio>
+                </div>
                 <codemirror class="margin-top20" v-model="basicRadio"/>
 
                 <p class="module-introduced">单选框组</p>
@@ -61,7 +62,8 @@
                 <p class="module-introduced">复选框组件，更多详见<a href="https://element.eleme.cn/#/zh-CN/component/checkbox">element-ui复选框组件</a>
                 </p>
                 <el-checkbox v-model="checked">备选项</el-checkbox>
-
+                <el-checkbox v-model="checked">备选项</el-checkbox>
+                <el-checkbox v-model="checked" disabled>备选项</el-checkbox>
                 <codemirror class="margin-top20" v-model="checkedCode"/>
 
                 <div class="header-nav-divider">输入框</div>
@@ -73,6 +75,15 @@
                     size="mini"
                     placeholder="请输入内容">
                 </el-input>
+
+                <el-input
+                    v-model="input"
+                    style="width: 176px;margin-left: 16px"
+                    size="mini"
+                    disabled
+                    placeholder="请输入内容">
+                </el-input>
+
                 <codemirror class="margin-top20" v-model="inputCode"/>
 
                 <div ref="selects" class="header-nav-divider">下拉框</div>
@@ -163,6 +174,27 @@
                         </el-time-picker>
                     </el-col>
                 </el-row>
+
+                <div ref="timeCom" class="header-nav-divider">switch开关</div>
+                <p class="module-introduced">在两种状态间切换时用到的开关选择器</p>
+
+                <el-row :gutter="16">
+                    <el-col :span="4">
+                        <el-switch
+                            v-model="switchData"
+                            active-color="#13ce66"
+                            inactive-color="#ff4949">
+                        </el-switch>
+                    </el-col>
+
+                    <el-col :span="4">
+                        <el-switch
+                            v-model="switchData">
+                        </el-switch>
+                    </el-col>
+                </el-row>
+
+                <codemirror class="margin-top20" v-model="switchCode"/>
             </div>
         </div>
     </div>
@@ -203,13 +235,15 @@
                 month: '',
                 week: '',
                 timePoint: '',
+                switchData: '',
                 basicRadio: form.basicRadio,
                 radioGroup: form.radioGroup,
                 checkedCode: form.checkedCode,
                 inputCode: form.inputCode,
                 selectCode: form.selectCode,
                 filterSelectCode: form.filterSelectCode,
-                dateCode: form.dateCode
+                dateCode: form.dateCode,
+                switchCode: form.switchCode
             }
         },
         mounted() {
@@ -233,8 +267,11 @@
                 {
                     el: 'filterSelectCode',
                     title: '模糊搜索'
+                },
+                {
+                    el: 'switch',
+                    title: 'switch开关'
                 }
-
             ]);
         },
         methods: {
