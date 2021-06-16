@@ -72,8 +72,9 @@
                     stripe
                     border
                     highlight-current-row
-                    :header-row-style="{background:'#E0EFFF'}"
-                    :header-cell-style="{background:'transparent'}"
+                    :header-row-style="{background:'#E0EFFF',color:'#262626'}"
+                    :header-cell-style="{background:'transparent',borderBottom: '1px solid #B2D7FF'}"
+                    :cell-style="{color: '#595959'}"
                     style="width: 100%">
                     <el-table-column
                         label="序号"
@@ -111,7 +112,6 @@
                 </el-table>
 
                 <codemirror class="margin-top20" v-model="borderTable"/>
-
 
 
                 <p ref="rowStyle" class="module-introduced">当表格行类需要根据条件修改样式时,添加row-style属性，回调方法返回样式对象</p>

@@ -20,9 +20,6 @@
                 </el-dialog>
 
                 <codemirror class="margin-top20" v-model="basicDialog"/>
-
-
-
             </div>
         </div>
     </div>
@@ -45,7 +42,6 @@
                     el: 'basicDialog',
                     title: "dialog弹窗"
                 }
-
             ]);
         },
         methods: {

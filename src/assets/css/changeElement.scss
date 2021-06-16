@@ -42,6 +42,11 @@ el-world-8.font-align-both {
   }
 }
 
+//表单label颜色
+.el-form-item__label {
+  color: #262626;
+}
+
 .el-form-item--mini .el-form-item__label {
   line-height: 32px !important;
 }
@@ -254,12 +259,43 @@ el-world-8.font-align-both {
 //修改mini输入框样式
 .el-input--mini .el-input__inner {
   min-height: 32px !important;
+}
 
+.el-input__inner {
+  border-radius: 2px;
+}
+
+//修改placeholder颜色
+input::-webkit-input-placeholder {
+  color: #BFBFBF !important;
 }
 
 //修改mini按钮样式
 .el-button--mini {
   padding: 9px 16px !important;
+}
+
+//主要按钮样式
+.el-button--primary {
+  background-color: #007AFF;
+  border-color: #007AFF;
+}
+
+//主要按钮hover
+.el-button--primary:focus, .el-button--primary:hover {
+  background-color: #3395FF;
+  border-color: #3395FF;
+}
+
+//主要按钮点击
+.el-button--primary.is-active, .el-button--primary:active {
+  background-color: #006EE6;
+  border-color: #006EE6;
+}
+
+//按钮间距
+.el-button + .el-button {
+  margin-left: 8px;
 }
 
 //时间选择“至”
@@ -398,6 +434,10 @@ el-world-8.font-align-both {
 
 //修改主页tabs 样式
 .home-tabs {
+  .el-tabs__item {
+    height: 32px;
+    line-height: 32px;
+  }
   .el-tabs--card > .el-tabs__header {
     border-bottom: none !important;
   }
@@ -414,12 +454,16 @@ el-world-8.font-align-both {
     border: none;
   }
   .el-tabs__item.is-active {
-    background-color: rgb(240, 247, 255);
+    background-color: #F0F7FF;
+    color: #007AFF;
   }
 
   .el-tabs--card > .el-tabs__header .el-tabs__nav {
     border-top: none !important;
     border-bottom: none !important;
+  }
+  .el-tabs--card>.el-tabs__header .el-tabs__item .el-icon-close {
+    color: #000000;
   }
 }
 
@@ -447,14 +491,13 @@ el-world-8.font-align-both {
       transform-origin: bottom;
     }
   }
-
   .el-tabs__header {
     margin: 0;
   }
 
   .el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
     &:after {
-      background-color: rgb(64, 158, 255);
+      background-color: #007AFF;
     }
     color: white;
   }
@@ -476,26 +519,39 @@ el-world-8.font-align-both {
     box-shadow: none;
     border: none;
   }
-  /deep/ .el-tabs__item {
+   .el-tabs__item {
     height: 32px;
     line-height: 32px;
   }
 
-  /deep/ .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+   .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
     color: #fFF;
-    background-color: #409EFF;
-    border-right-color: #409EFF;
-    border-left-color: #409EFF;
+    background-color: #007AFF;
+    border-right-color: #007AFF;
+    border-left-color: #007AFF;
   }
-  /deep/ .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active:hover {
+   .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active:hover {
     color: #FFF;
   }
 }
 
+.normal-tabs {
+  .el-tabs__item:hover {
+    color: #007AFF;
+  }
+  .el-tabs__item.is-active {
+    color: #007AFF;
+  }
+  .el-tabs__active-bar {
+    background-color: #007AFF;
+  }
+}
+
+
 //修改左菜单样式
 .el-menu-item.is-active {
   background-color: #E0EFFF !important;
-  color: #1890FF !important;
+  color: #007AFF !important;
 }
 
 .el-menu-item, .el-submenu__title {
@@ -503,18 +559,27 @@ el-world-8.font-align-both {
   line-height: 40px;
 }
 
+.el-submenu .el-menu-item {
+  height: 40px;
+  line-height: 40px;
+}
+
 //修改dialog样式
 .el-dialog__header {
   border-bottom: 1px solid rgb(230, 230, 230);
-  padding: 14px 20px 12px;
-  background-color: #409EFF;
+  padding: 8px 24px 7px;
+  background-color: #ffffff;
   .el-dialog__title {
-    color: white;
+    color: #007AFF;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .el-dialog__headerbtn {
+    top: 13px;
   }
   .el-dialog__headerbtn .el-dialog__close {
-    border-radius: 16px;
     background-color: white;
-    color: #409EFF;
+    color: #D9D9D9;
   }
 }
 
@@ -524,12 +589,12 @@ el-world-8.font-align-both {
 
 .el-dialog__body {
   height: 600px;
-  padding: 10px 20px;
+  padding: 24px;
   overflow: scroll;
 }
 
 .el-dialog__footer {
-  padding: 0px 20px 10px;
+  padding: 0px 24px 16px;
 }
 
 //修改垂直分割线
@@ -583,11 +648,6 @@ el-world-8.font-align-both {
       color: white;
     }
   }
-}
-
-//修改单选框样式
-.el-radio {
-  margin-right: 24px;
 }
 
 //修改下拉框样式
@@ -664,6 +724,11 @@ el-world-8.font-align-both {
   color: #FFFFFF;
 }
 
+//修改单选框样式
+.el-radio {
+  margin-right: 24px;
+}
+
 //单选框样式
 .el-radio__inner {
   width: 16px;
@@ -678,18 +743,23 @@ el-world-8.font-align-both {
 //单选选中
 .el-radio__input.is-checked .el-radio__inner {
   border-color: #007AFF;
-  background: #007AFF;
+  background: transparent;
+}
+
+//选中的内环样式
+.el-radio__inner::after {
+  width: 8px;
+  height: 8px;
+  background-color: #007AFF;
+}
+
+//选中label
+.el-radio__input.is-checked + .el-radio__label {
+  color: #007AFF;
 }
 
 .el-radio__label {
   padding-left: 8px;
-}
-
-.radio-mini {
-  /deep/ .el-radio__inner {
-    width: 14px;
-    height: 14px;
-  }
 }
 
 //复选框样式修改
@@ -709,6 +779,14 @@ el-world-8.font-align-both {
 .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
   background-color: #007AFF;
   border-color: #007AFF;
+}
+
+.el-checkbox__input.is-checked + .el-checkbox__label {
+  color: #007AFF;
+}
+
+.el-checkbox__label {
+  padding-left: 8px;
 }
 
 //按钮复选框

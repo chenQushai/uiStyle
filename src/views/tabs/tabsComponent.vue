@@ -55,8 +55,18 @@
 
                 <codemirror class="margin-top20" v-model="borderTabs"/>
 
+                <p ref="normalTabs" class="module-introduced">普通的tabs</p>
 
+                <div  class="margin-top10 normal-tabs">
+                    <el-tabs v-model="activeName" @tab-click="handleClick">
+                        <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
+                        <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+                        <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+                        <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+                    </el-tabs>
+                </div>
 
+                <codemirror class="margin-top20" v-model="normalTabs"/>
             </div>
         </div>
     </div>
@@ -87,7 +97,8 @@
                 ],
                 basicTabs: basicTabs.basicTabs,
                 trapezoidTabs: basicTabs.trapezoidTabs,
-                borderTabs: basicTabs.borderTabs
+                borderTabs: basicTabs.borderTabs,
+                normalTabs: basicTabs.normalTabs
             }
         },
         mounted() {
@@ -103,6 +114,10 @@
                 {
                     el: 'borderCard',
                     title: '边框tabs'
+                },
+                {
+                    el: 'normalTabs',
+                    title: '普通tabs'
                 }
 
             ]);

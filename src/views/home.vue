@@ -153,7 +153,13 @@
                         icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
                         menuName: '树形',
                         url: '/home/tree',
-                        children: []
+                        children: [
+                            {
+                                menuName: '子级',
+                                url: '/home/tree',
+                                children: []
+                            }
+                        ]
                     },
                     {
                         icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],

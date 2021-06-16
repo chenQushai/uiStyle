@@ -233,7 +233,7 @@
                         <div class="form-box border-gray">
                             <p class="divider-tag">必填</p>
                             <el-row class="required-item" :gutter="16">
-                                <el-col :span="8" class="el-world-8 el-world-color-red">
+                                <el-col :span="8" class="el-world-8">
                                     <el-form-item label="姓名:" prop="name">
                                         <el-input v-model="form.name"></el-input>
                                     </el-form-item>
@@ -253,7 +253,7 @@
                             </el-row>
 
                             <el-row class="required-item" :gutter="16">
-                                <el-col :span="8" class="el-world-8 el-world-color-red">
+                                <el-col :span="8" class="el-world-8">
                                     <el-form-item label="姓名:" prop="name">
                                         <el-input v-model="form.name"></el-input>
                                     </el-form-item>
