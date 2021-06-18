@@ -293,9 +293,22 @@ input::-webkit-input-placeholder {
   border-color: #006EE6;
 }
 
+//主要按钮的朴素样式
+.el-button--primary.is-plain {
+  color: #007AFF;
+  background: transparent;
+  border-color: #007AFF;
+}
+
+
 //按钮间距
 .el-button + .el-button {
   margin-left: 8px;
+}
+
+//按钮的圆角
+.el-button--mini, .el-button--small {
+  border-radius: 2px;
 }
 
 //时间选择“至”
@@ -349,7 +362,7 @@ input::-webkit-input-placeholder {
 }
 
 .el-table td, .el-table th {
-  padding: 4px 0 !important;
+  padding: 4px 0;
 }
 
 //小型表格一般用于表格内嵌表格
@@ -462,8 +475,9 @@ input::-webkit-input-placeholder {
     border-top: none !important;
     border-bottom: none !important;
   }
-  .el-tabs--card>.el-tabs__header .el-tabs__item .el-icon-close {
+  .el-tabs--card > .el-tabs__header .el-tabs__item .el-icon-close {
     color: #000000;
+    right: -15px;
   }
 }
 
@@ -519,18 +533,18 @@ input::-webkit-input-placeholder {
     box-shadow: none;
     border: none;
   }
-   .el-tabs__item {
+  .el-tabs__item {
     height: 32px;
     line-height: 32px;
   }
 
-   .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+  .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
     color: #fFF;
     background-color: #007AFF;
     border-right-color: #007AFF;
     border-left-color: #007AFF;
   }
-   .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active:hover {
+  .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active:hover {
     color: #FFF;
   }
 }
@@ -546,7 +560,6 @@ input::-webkit-input-placeholder {
     background-color: #007AFF;
   }
 }
-
 
 //修改左菜单样式
 .el-menu-item.is-active {

@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header class="page-header" :style="{backgroundImage: `url(${headerBg})`}">
+        <el-header class="page-header" :style="{background: 'linear-gradient(194deg, #3D7FFC 0%, #0450FF 100%)'}">
             <img class="company-icon" src="../assets//img/company-icon.png" alt="">
             <div class="system-name">ui样式模板</div>
             <div class="user-function">
@@ -60,7 +60,7 @@
                                 </el-submenu>
 
                                 <el-menu-item :index="child.url" :key="i" v-if="child.children.length === 0">
-                                    {{child.menuName}}
+                                    <span style="color: #595959">{{child.menuName}}</span>
                                 </el-menu-item>
                             </div>
                         </el-submenu>
@@ -112,7 +112,6 @@
         data() {
 
             return {
-                headerBg: require('../assets/img/header.png'),
                 createName: '',
                 defaultActive: '/home/generalCss',
                 ItemTabsValue: '/home/generalCss',
@@ -359,7 +358,7 @@
         width: 100%;
         height: calc(100% - 40px);
         overflow: auto;
-        background-color: rgb(241, 245, 253);
+        background-color: #f0f0f0;
         padding: 8px;
     }
 

@@ -98,3 +98,41 @@ a {
   color: #1890FF;
 }
 
+
+//线框朴素表格
+.row-list {
+  display: flex;
+  border-top: 1px solid #BFDEFF;
+  .col-item {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #BFDEFF;
+    padding: 5px;
+    min-height: 32px;
+    align-items: flex-end;
+    &:nth-of-type(2n) {
+      align-items: flex-start;
+      color: #595959;
+      padding: 0 0 0 16px;
+    }
+    //奇数行样式
+    &:nth-of-type(2n + 1) {
+      color: #262626;
+      background-color: #E0EFFF;
+      font-weight: bold;
+      align-items: center;
+    }
+    .cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+    &:last-child {
+      border-right: 1px solid #BFDEFF;
+    }
+  }
+  &:last-child {
+    border-bottom: 1px solid #BFDEFF;
+  }
+}

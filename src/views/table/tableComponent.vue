@@ -420,6 +420,80 @@
                         </template>
                     </el-table-column>
                 </el-table>
+
+                <div ref="staticTable" class="header-nav-divider">静态表格</div>
+                <div>
+                    <el-row class="row-list">
+                        <el-col :span="2" class="col-item text-right">
+                            <div class="cell">姓名:</div>
+                        </el-col>
+                        <el-col :span="2" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+
+                        <el-col :span="3" class="col-item text-right">
+                            <div class="cell">工号:</div>
+                        </el-col>
+                        <el-col :span="12" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+
+                        <el-col :span="2" class="col-item text-right">
+                            <div class="cell">科室:</div>
+                        </el-col>
+                        <el-col :span="3" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+                    </el-row>
+
+                    <el-row class="row-list">
+                        <el-col :span="2" class="col-item text-right">
+                            <div class="cell">时间:</div>
+                        </el-col>
+                        <el-col :span="2" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+
+                        <el-col :span="3" class="col-item text-right">
+                            <div class="cell">标题:</div>
+                        </el-col>
+                        <el-col :span="12" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+
+                        <el-col :span="2" class="col-item text-right">
+                            <div class="cell">金额:</div>
+                        </el-col>
+                        <el-col :span="3" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+                    </el-row>
+
+                    <el-row class="row-list">
+                        <el-col :span="2" class="col-item text-right">
+                            <div class="cell">类型:</div>
+                        </el-col>
+                        <el-col :span="2" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+
+                        <el-col :span="3" class="col-item text-right">
+                            <div class="cell">奖惩单位:</div>
+                        </el-col>
+                        <el-col :span="12" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+
+                        <el-col :span="2" class="col-item">
+                            <div class="cell">审核人:</div>
+                        </el-col>
+                        <el-col :span="3" class="col-item">
+                            <div class="cell"></div>
+                        </el-col>
+                    </el-row>
+                </div>
+
+                <codemirror class="margin-top20" v-model="staticTable"/>
             </div>
         </div>
     </div>
@@ -488,6 +562,7 @@
                 editTableRow: tableCode.editTableRow,
                 editTableCell: tableCode.editTableCell,
                 pagination: tableCode.pagination,
+                staticTable: tableCode.staticTable
             }
         },
         mounted() {
@@ -527,6 +602,10 @@
                 {
                     el: 'checkTable',
                     title: '复选框表格'
+                },
+                {
+                    el: 'staticTable',
+                    title: '静态表格'
                 }
 
             ]);

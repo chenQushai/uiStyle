@@ -50,8 +50,9 @@ export default {
        stripe
        border
        highlight-current-row
-       :header-row-style="{background:'#E0EFFF'}"
-       :header-cell-style="{background:'transparent'}"
+       :header-row-style="{background:'#E0EFFF',color:'#262626'}"
+       :header-cell-style="{background:'transparent',borderBottom: '1px solid #B2D7FF'}"
+       :cell-style="{color: '#595959'}"
        style="width: 100%">
        <el-table-column
            label="序号"
@@ -388,6 +389,78 @@ export default {
     handleCurrentChange(val) {
         console.log(当前页: val);
     }
-    `
+    `,
+    staticTable: `
+      <el-row class="row-list">
+          <el-col :span="2" class="col-item text-right">
+              <div class="cell">姓名:</div>
+          </el-col>
+          <el-col :span="2" class="col-item">
+              <div class="cell"></div>
+          </el-col>
 
+          <el-col :span="3" class="col-item text-right">
+              <div class="cell">工号:</div>
+          </el-col>
+          <el-col :span="12" class="col-item">
+               <div class="cell"></div>
+          </el-col>
+
+          <el-col :span="2" class="col-item text-right">
+               <div class="cell">科室:</div>
+          </el-col>
+          <el-col :span="3" class="col-item">
+               <div class="cell"></div>
+          </el-col>
+      </el-row>
+
+      <el-row class="row-list">
+           <el-col :span="2" class="col-item text-right">
+                <div class="cell">时间:</div>
+           </el-col>
+           <el-col :span="2" class="col-item">
+                <div class="cell"></div>
+           </el-col>
+
+           <el-col :span="3" class="col-item text-right">
+                <div class="cell">标题:</div>
+           </el-col>
+           <el-col :span="12" class="col-item">
+                <div class="cell"></div>
+           </el-col>
+
+          <el-col :span="2" class="col-item text-right">
+                <div class="cell">金额:</div>
+          </el-col>
+          <el-col :span="3" class="col-item">
+               <div class="cell"></div>
+          </el-col>
+      </el-row>
+
+                <el-row class="row-list">
+                    <el-col :span="2" class="col-item text-right">
+                        <div class="cell">类型:</div>
+                    </el-col>
+                    <el-col :span="2" class="col-item">
+                        <div class="cell"></div>
+                    </el-col>
+
+                    <el-col :span="3" class="col-item text-right">
+                        <div class="cell">奖惩单位:</div>
+                    </el-col>
+                    <el-col :span="12" class="col-item">
+                        <div class="cell"></div>
+                    </el-col>
+
+                    <el-col :span="2" class="col-item">
+                        <div class="cell">审核人:</div>
+                    </el-col>
+                    <el-col :span="3" class="col-item">
+                        <div class="cell"></div>
+                    </el-col>
+                </el-row>
+    
+    
+    
+    `
 }
