@@ -69,9 +69,9 @@
                 <codemirror class="margin-top20" v-model="normalTabs"/>
 
                 <p ref="radiusTabs" class="module-introduced">圆角的tabs</p>
-                <p  class="module-introduced">只需在外层div添加radius-tabs即可</p>
+                <p  class="module-introduced">采用type为card模式，在外层div添加radius-tabs即可</p>
                 <div class="margin-top10 radius-tabs">
-                    <el-tabs v-model="activeName" @tab-click="handleClick">
+                    <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
                         <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
                         <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
                         <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>

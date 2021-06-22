@@ -80,7 +80,7 @@ export default {
     `,
 
     normalTabs: `
-       <el-tabs v-model="activeName" @tab-click="handleClick">
+       <el-tabs v-model="activeName"  @tab-click="handleClick">
            <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
            <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
            <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
@@ -90,7 +90,7 @@ export default {
 
     radiusTabs: `
          <div class="margin-top10 radius-tabs">
-             <el-tabs v-model="activeName" @tab-click="handleClick">
+             <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
                 <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
                 <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
                 <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
