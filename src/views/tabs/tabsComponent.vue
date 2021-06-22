@@ -67,6 +67,19 @@
                 </div>
 
                 <codemirror class="margin-top20" v-model="normalTabs"/>
+
+                <p ref="radiusTabs" class="module-introduced">圆角的tabs</p>
+                <p  class="module-introduced">只需在外层div添加radius-tabs即可</p>
+                <div class="margin-top10 radius-tabs">
+                    <el-tabs v-model="activeName" @tab-click="handleClick">
+                        <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
+                        <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+                        <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+                        <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+                    </el-tabs>
+                </div>
+
+                <codemirror class="margin-top20" v-model="radiusTabs"/>
             </div>
         </div>
     </div>
@@ -98,7 +111,8 @@
                 basicTabs: basicTabs.basicTabs,
                 trapezoidTabs: basicTabs.trapezoidTabs,
                 borderTabs: basicTabs.borderTabs,
-                normalTabs: basicTabs.normalTabs
+                normalTabs: basicTabs.normalTabs,
+                radiusTabs: basicTabs.radiusTabs
             }
         },
         mounted() {
@@ -118,6 +132,10 @@
                 {
                     el: 'normalTabs',
                     title: '普通tabs'
+                },
+                {
+                    el: 'radiusTabs',
+                    title: '圆角tabs'
                 }
 
             ]);

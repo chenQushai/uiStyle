@@ -9,6 +9,7 @@
             :start-title="'住院'"
             theme="#459DF5"
             @handClick="child"
+            @handClickTime="timeItem"
             :prop="{top: 't',bottom: 'b'}"
         >
         </fishBone>
@@ -130,6 +131,9 @@
         methods: {
             child(c) {
                 console.log(c)
+            },
+            timeItem(it) {
+                console.log(it)
             }
         }
     }
