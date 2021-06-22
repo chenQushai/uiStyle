@@ -258,7 +258,7 @@ el-world-8.font-align-both {
 
 //修改mini输入框样式
 .el-input--mini .el-input__inner {
-  min-height: 32px !important;
+  height: 32px;
 }
 
 .el-input__inner {
@@ -432,6 +432,10 @@ input::-webkit-input-placeholder {
 //分页的跳转控件
 .el-pagination__jump {
   margin-left: 0px;
+}
+//分页下来选页码
+.el-pagination__sizes .el-input .el-input__inner {
+  height: 28px;
 }
 
 //修改左菜单自定义icon样式
