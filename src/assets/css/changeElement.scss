@@ -482,6 +482,10 @@ input::-webkit-input-placeholder {
     color: #000000;
     right: -15px;
   }
+  //出滚动后滑动箭头
+  .el-tabs__nav-next, .el-tabs__nav-prev {
+    line-height: 30px;
+  }
 }
 
 //梯形tabs 样式
