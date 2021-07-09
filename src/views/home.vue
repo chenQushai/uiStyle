@@ -60,7 +60,7 @@
                                 </el-submenu>
 
                                 <el-menu-item :index="child.url" :key="i" v-if="child.children.length === 0">
-                                    <span style="color: #595959">{{child.menuName}}</span>
+                                    <span style="color: #595959;padding-left: 8px">{{child.menuName}}</span>
                                 </el-menu-item>
                             </div>
                         </el-submenu>

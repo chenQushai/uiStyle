@@ -424,6 +424,21 @@ input::-webkit-input-placeholder {
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+.el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li {
+  min-width: 24px;
+}
+
+.el-pager li {
+  height: 24px;
+  line-height: 24px;
+}
+.el-pagination__editor.el-input .el-input__inner {
+  height: 24px;
+}
+.el-pagination button, .el-pagination span:not([class*=suffix]) {
+  height: 24px;
+  line-height: 24px;
+}
 //带背景分页选中样式
 .el-pagination.is-background .el-pager li:not(.disabled).active {
   border: none;
@@ -433,9 +448,10 @@ input::-webkit-input-placeholder {
 .el-pagination__jump {
   margin-left: 0px;
 }
+
 //分页下来选页码
 .el-pagination__sizes .el-input .el-input__inner {
-  height: 28px;
+  height: 24px;
 }
 
 //修改左菜单自定义icon样式
@@ -582,10 +598,9 @@ input::-webkit-input-placeholder {
       margin-left: 0;
     }
   }
-  .el-tabs--card>.el-tabs__header .el-tabs__nav {
+  .el-tabs--card > .el-tabs__header .el-tabs__nav {
     border: none;
   }
-
 
   .el-tabs--bottom .el-tabs__item.is-bottom:nth-child(2), .el-tabs--bottom .el-tabs__item.is-top:nth-child(2), .el-tabs--top .el-tabs__item.is-bottom:nth-child(2), .el-tabs--top .el-tabs__item.is-top:nth-child(2) {
     padding-left: 20px;
@@ -605,14 +620,14 @@ input::-webkit-input-placeholder {
     border-bottom: none;
     height: 41px;
   }
-  .el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
+  .el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
     border-left: 1px solid #007AFF;
   }
 
   .el-tabs__active-bar {
     height: 0;
   }
-  .el-tabs--card>.el-tabs__header {
+  .el-tabs--card > .el-tabs__header {
     border-bottom: 1px solid #d9d9d9;
   }
 }

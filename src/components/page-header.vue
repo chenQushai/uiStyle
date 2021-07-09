@@ -37,7 +37,7 @@
         }
         .page__button {
             flex: 1;
-            padding: 3px 12px;
+            padding: 7px 12px;
             text-align: right;
         }
     }
