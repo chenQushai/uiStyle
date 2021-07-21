@@ -56,7 +56,6 @@
                                             {{third.menuName}}
                                         </el-menu-item>
                                     </div>
-
                                 </el-submenu>
 
                                 <el-menu-item :index="child.url" :key="i" v-if="child.children.length === 0">
@@ -194,6 +193,12 @@
                         icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
                         menuName: '模块懒加载',
                         url: '/home/modulesLoading',
+                        children: []
+                    },
+                    {
+                        icon: ['iconfont', 'iconchufangguanli2', 'menu-iconfont'],
+                        menuName: '图片查看器',
+                        url: '/home/image-view-demo',
                         children: []
                     }
                 ],

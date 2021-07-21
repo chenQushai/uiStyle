@@ -464,6 +464,12 @@ input::-webkit-input-placeholder {
   font-size: 18px;
 }
 
+//tabs下边距
+.el-tabs__header {
+  margin: 0 0 8px;
+}
+
+
 //修改主页tabs 样式
 .home-tabs {
   .el-tabs__item {

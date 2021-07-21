@@ -77,6 +77,11 @@ let routes = [
                 path: 'modulesLoading',
                 name: 'modulesLoading',
                 component: () => import('../views/modulesLoading/modulesLoading')
+            },
+            {
+                path: 'image-view-demo',
+                name: 'image-view-demo',
+                component: () => import('../views/image-views/image-view-demo')
             }
         ],
     },
