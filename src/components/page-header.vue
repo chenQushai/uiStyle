@@ -25,7 +25,7 @@
     .page__header {
         display: flex;
         width: 100%;
-        height: 40px;
+        height: 48px;
         border-bottom: 1px solid #D9D9D9;
         background-color: white;
         .page__title {

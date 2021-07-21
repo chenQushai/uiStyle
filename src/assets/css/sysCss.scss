@@ -21,3 +21,10 @@
 .CodeMirror {
   height: 100% !important;
 }
+
+//固定表单内容区
+.fixed-form {
+  .el-form-item__content {
+    width: 176px;
+  }
+}
